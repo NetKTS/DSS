@@ -23,7 +23,7 @@
             <table border="0">
             <div class="form-check card-body">
                 <td>
-                <label for="category" class="alert alert-warning" style="margin-right: 30px">ประเภทอาหาร : sadasd</label>
+                <label for="category" class="alert alert-warning" style="margin-right: 30px">ประเภทอาหาร :</label>
                 </td>
                 <td>
                     <!-- <div id="list-example" class="list-group " data-target="">
