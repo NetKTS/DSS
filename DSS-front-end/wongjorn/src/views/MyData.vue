@@ -21,9 +21,9 @@
             <td>{{ item.pricerate }}</td>
             <td> <font v-for="(ser, in2) in item.service" :key="in2"> {{ item.service[in2] }} <br> </font> </td>
             
-            <td> Monday : {{item.date[index].monday}} <br> Tuesday : {{item.date[index].tuesday}} <br> Wednesday : {{ item.date[index].wednesday }}
-            <br> Thursday : {{ item.date[index].thursday }} <br> Friday : {{item.date[index].friday}} <br> Saturday : {{ item.date[index].saturday}}
-            <br> Sunday : {{ item.date[index].sunday }} </td>
+            <td> Monday : {{item.date[0].monday}} <br> Tuesday : {{item.date[0].tuesday}} <br> Wednesday : {{ item.date[0].wednesday }}
+            <br> Thursday : {{ item.date[0].thursday }} <br> Friday : {{item.date[0].friday}} <br> Saturday : {{ item.date[0].saturday}}
+            <br> Sunday : {{ item.date[0].sunday }} </td>
             <td>{{ item.location }}</td>
             <!-- <td>{{ item.map }}</td> -->
             <td><button>Edit</button></td>
