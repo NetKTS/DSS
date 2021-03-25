@@ -1,9 +1,9 @@
 <template>
-  <div id="header">
+  <div id="Header">
       <ul>
     <li><router-link to="/"> <button> Home </button></router-link></li>
-    <li><router-link to="/wongjorn"> <button>Wongjorn</button> </router-link></li>
-    <li><router-link to="/compute"><button>Compute</button></router-link></li>
+    <!-- <li><router-link to="/wongjorn"> <button>Wongjorn</button> </router-link></li>
+    <li><router-link to="/compute"><button>Compute</button></router-link></li> -->
     <li><router-link to="/form"><button>Form</button></router-link></li>
   </ul>
   </div>

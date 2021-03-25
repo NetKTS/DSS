@@ -6,6 +6,7 @@ import Compute from '../views/Compute.vue'
 import Form from '../views/Form.vue'
 import MyData from '../views/MyData.vue'
 import login from '../views/login.vue'
+import AddData from '../views/AddData.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login
+  },
+  {
+    path: '/AddData',
+    name: 'AddData',
+    component: AddData
   }
 ]
 

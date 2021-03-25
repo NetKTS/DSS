@@ -1,6 +1,8 @@
 <template>
   <div class="bgcolor">
+    <Header class="container"/>
     <br />
+    <div class="container"  align="right"> <router-link to="/AddData" > <input type="button" value="Add Resturant"> </router-link> </div>
     <br />
     <table class="container" border="1">
       <tr>
@@ -38,9 +40,10 @@
 
 <script>
 import axios from "axios";
+import Header from "../components/layout/Header";
 export default {
+  components: { Header },
   name: "MyData",
-  component: {},
   data() {
       return {
           resturant_name:[],
