@@ -1,20 +1,19 @@
 <template>
   <body>
-    <router-link to="/form">
-      <center>
-          <img
-            style="width:30%;margin-top:7%;opacity:1;"
-            id="img1"
-            src="../assets/wongjornlogo2.png"
-          />
-      </center>
-    </router-link>
+    <center>
+      <router-link to="/form">
+        <img
+          style="width:30%;margin-top:7%;opacity:1;"
+          id="img1"
+          src="../assets/wongjornlogo2.png"
+        />
+      </router-link>
+    </center>
+    <h1>{{test2}}</h1>
   </body>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: "Home",
   components: {},
@@ -22,16 +21,9 @@ export default {
 </script>
 
 <style>
-/* .backgroundimage{
-  background-image: url('../assets/wongjornlogo2.png');
-  height: 100%;
-  margin-top: 6%;
-  opacity: 1;
-} */
 body {
   background-color: #efede8;
 }
-
 .setmid {
   margin-left: 30%;
 }

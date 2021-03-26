@@ -14,4 +14,3 @@ function getData(){
         console.log(error);
     })
 }
-
