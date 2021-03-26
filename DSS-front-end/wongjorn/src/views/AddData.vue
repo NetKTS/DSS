@@ -2,7 +2,8 @@
   <div>
     <br />
     <div>
-      <form action="" method="">
+      <Header class="container" />
+      <form >
         <div>
           <table class="container" border="1" width="300px" height="500px">
             <th></th>
@@ -25,12 +26,14 @@
                   v-model="newdata.category[2]"
                   type="text"
                 />
-                <button @click="countcheckcategory++">+</button>
+                <font @click="countcheckcategory++" >[ + ]</font>
               </td>
             </tr>
             <tr>
               <td align="right">เรทราคา</td>
-              <td><input v-model="newdata.pricerate" type="text" required /></td>
+              <td>
+                <input v-model="newdata.pricerate" type="text" required />
+              </td>
             </tr>
             <tr>
               <td align="right">วัน</td>
@@ -85,15 +88,15 @@
                 <input type="text" v-model="newdata.service[0]" required />
                 <input
                   v-if="countcheckservice >= 2"
-                  v-model="service[1]"
+                  v-model="newdata.service[1]"
                   type="text"
                 />
                 <input
                   v-if="countcheckservice >= 3"
-                  v-model="service[2]"
+                  v-model="newdata.service[2]"
                   type="text"
                 />
-                <button @click="countcheckservice++">+</button>
+                <font @click="countcheckservice++" >[ + ]</font>
               </td>
             </tr>
             <tr>
@@ -110,7 +113,8 @@
                   v-model="newdata.tel[2]"
                   type="text"
                 />
-                <button @click="countchecktel++">+</button>
+                <font @click="countchecktel++" >[ + ]</font>
+                
               </td>
             </tr>
             <tr>
@@ -127,19 +131,22 @@
               </td>
             </tr>
             <tr>
-              <td><input @click="submit" type="submit" /></td>
+              <td> <router-link to="/MyData" > <button  @click="addData">ADD DATA</button></router-link></td>
             </tr>
           </table>
         </div>
       </form>
     </div>
     <div style="margin-top: 16px; color: red">
-      #Spy {{ JSON.stringify(newdata) }}
+      <!-- #Spy {{ JSON.stringify(newdata) }} -->
     </div>
   </div>
 </template>
 
 <script>
+import { HTTP } from "./http-common";
+import Header from "../components/layout/Header";
+import axios from "axios";
 
 export default {
   name: "AddData",
@@ -148,6 +155,7 @@ export default {
       countcheckcategory: 1,
       countcheckservice: 1,
       countchecktel: 1,
+
       newdata: {
         name: "",
         category: [],
@@ -171,12 +179,30 @@ export default {
       },
     };
   },
+  components:{ Header }
+  ,
   mounted() {},
   methods: {
-    submit() {
+    async submit() {
       alert(JSON.stringify(this.newdata));
-      
-      
+      await HTTP.post(`http://localhost:2002/api/create/Namelist`, this.newdata)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+    async addData() {
+      await axios
+        .post("http://localhost:2002/api/create/Namelist", {
+          payload: this.newdata,
+        })
+        .then(() => {
+          alert("Add Success !!");
+        });
+
+         
     },
   },
 };
