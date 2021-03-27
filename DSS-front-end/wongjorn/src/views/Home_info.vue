@@ -1,6 +1,6 @@
 <template>
   <div class="bgcolor">
-    <p>hello</p>
+    <p>hello world</p>
   </div>
 
 </template>
@@ -8,17 +8,13 @@
 
 <script>
 // @ is an alias to /src
-
-
 export default {
   name: 'Home',
   components: {
-
   }
 }
+
 </script>
 
 <style>
-
-
 </style>
