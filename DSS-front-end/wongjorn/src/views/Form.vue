@@ -1,4 +1,5 @@
 <template lang="">
+<body>
   <div class="container">
     <form action="" style="font-size:20px">
       <br />
@@ -826,6 +827,7 @@
       #Spy {{ JSON.stringify(applicant) }}
     </div> -->
   </div>
+  </body>
 </template>
 <script>
 export default {
@@ -852,6 +854,20 @@ export default {
 };
 </script>
 <style>
+body {
+  background-color: #efede8;
+  animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 img {
   max-width: 100%;
   height: auto;

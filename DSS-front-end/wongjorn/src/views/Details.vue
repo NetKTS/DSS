@@ -1,4 +1,5 @@
 <template>
+<body>
   <div class="container">
     <br>
     <center>
@@ -68,6 +69,7 @@
         </center>
       </div>
   </div>
+  </body>
 </template>
 
 <script>
@@ -75,6 +77,20 @@ export default {};
 </script>
 
 <style>
+body {
+  background-color: #efede8;
+  animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 .font {
   font-family: Oswald;
 }
