@@ -28,10 +28,7 @@
           </tr>
         </table>
       </center>
-      <br />
-      <hr
-        style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:1100px"
-      />
+      
       <br>
 
       <center>
@@ -39,7 +36,10 @@
           ค้นหาร้านอาหารที่ใกล้ที่สุด
         </h2>
       </center>
-      <br />
+      
+    <hr
+        style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:1100px"
+      />
       <div
         class="card-header"
         style="border-radius:10px;border:1px solid black;width:225px;margin-left:5px;"
@@ -64,7 +64,7 @@
       >
 
         <label for="category" class="font2" style="font-size:24px;font-weight:bold;"
-          >ประเภทอาหารนะจ๊ะ</label
+          >ประเภทอาหาร</label
         >
         <hr
           style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:1055px"
@@ -836,7 +836,7 @@ export default {
         category: "",
         pricerate: "",
         date: new Date().getDay(),
-        service: "",
+        //service: "",
       },
       timestamp: "",
     };
