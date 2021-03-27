@@ -7,7 +7,7 @@
           <tr>
             <td style="border-collapse: collapse;width:450px;">
               <hr
-                style="border-radius: 5px;height:5px;border-width:0;color:black;background-color:black;width:450px"
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:450px"
               />
             </td>
             <td style="border-collapse: collapse;width:200px;position:center;">
@@ -22,7 +22,7 @@
             </td>
             <td style="border-collapse: collapse;width:450px">
               <hr
-                style="border-radius: 5px;height:5px;border-width:0;color:black;background-color:black;width:450px"
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:450px"
               />
             </td>
           </tr>
@@ -820,9 +820,10 @@
         </center>
       </div>
     </form>
-    <div style="margin-top:16px;color:red;">
+    <br><br>
+    <!-- <div style="margin-top:16px;color:red;">
       #Spy {{ JSON.stringify(applicant) }}
-    </div>
+    </div> -->
   </div>
 </template>
 <script>

@@ -8,6 +8,8 @@ import MyData from '../views/MyData.vue'
 import login from '../views/login.vue'
 import AddData from '../views/AddData.vue'
 import Map from '../views/map.vue'
+import Home_info from '../views/Home_info.vue'
+import Details from '../views/Details.vue'
 
 Vue.use(VueRouter)
 
@@ -51,6 +53,16 @@ const routes = [
     path: '/Map',
     name: 'Map',
     component: Map
+  },
+  {
+    path: '/Home_info',
+    name: 'Home_info',
+    component: Home_info
+  },
+  {
+    path: '/Details',
+    name: 'Details',
+    component: Details
   }
 
 ]
