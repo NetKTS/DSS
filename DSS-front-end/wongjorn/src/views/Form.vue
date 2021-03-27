@@ -36,7 +36,7 @@
 
       <center>
         <h2 class="font2" style="font-weight:bold;">
-          ค้นหาร้านอาหารที่ใกล้ที่สุดอยู่
+          ค้นหาร้านอาหารที่ใกล้ที่สุด
         </h2>
       </center>
       <br />
