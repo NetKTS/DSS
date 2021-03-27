@@ -62,8 +62,9 @@
         class="card-header"
         style="border-radius:10px;border:1px solid black;width:1100px;margin-left:5px"
       >
+
         <label for="category" class="font2" style="font-size:24px;font-weight:bold;"
-          >ประเภทอาหาร</label
+          >ประเภทอาหารนะจ๊ะ</label
         >
         <hr
           style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:1055px"
