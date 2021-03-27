@@ -9,7 +9,7 @@
 
         </td>
         <td style="width:400px;">
-          <p class="left font2" style="font-size:24px;font-weight:bold;">ชื่อร้านอาหารนะจ๊ะ</p>
+          <p class="left font2" style="font-size:24px;font-weight:bold;">ชื่อร้านอาหาร</p>
           <p>GUY</p>
           <p>GUY</p>
         </td>
