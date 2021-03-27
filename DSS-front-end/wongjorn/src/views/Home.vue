@@ -1,7 +1,7 @@
 <template>
   <body>
     <center>
-      <router-link to="/form">
+      <router-link to="/Home_info">
       <a>
         <img
           style="width:30%;margin-top:7%;opacity:1;"
