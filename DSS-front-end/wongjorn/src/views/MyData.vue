@@ -63,6 +63,7 @@ export default {
         console.log(error);
       });
       //console.log(this.resturant_name)
+      
   },
   methods: {
     subtime(){

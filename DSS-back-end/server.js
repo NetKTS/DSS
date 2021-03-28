@@ -18,26 +18,7 @@ app.use((req, res, next) => {
     })
 
 
-const Namelist = [
-    {
-        id: '1001',
-        name: 'ร้านลุงอ้วน',
-        category: 'อาหารตามสั่ง',
-        pricerate: 'ต่ำกว่า 100',
-        monday: '08:00-20:00',
-        tuesday: '08:00-20:00',
-        wednesday: '08:00-20:00',
-        thursday: '08:00-20:00',
-        friday: '08:00-20:00',
-        saturday: '08:00-18:00',
-        sunday: '08:00-18:00',
-        service: ["สั่งกลับบ้าน","นั่งรับประทานที่ร้าน"],
-        tel: '0613894556',
-        location: 'ตำบล เนินหอม อำเภอเมืองปราจีนบุรี ปราจีนบุรี 25230',
-        map: '14.162816283394443, 101.36525672289856 '
-    },
-   
-]
+
 
 
 
@@ -68,10 +49,8 @@ app.get('/restname',(req, res) => {
     res.json(Schema)
 })
 
-app.get('/restname/:name',(req, res) => {
-    const { name } = req.params
-    const result = Namelist.find(payload => payload.name === name)
-    res.json(result)
+app.get('/restname/:id',(req, res) => {
+    namelistRoutes.getById
 })
 
 app.post('/restname',(req, res) => {
