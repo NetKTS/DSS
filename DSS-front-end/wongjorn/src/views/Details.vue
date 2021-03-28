@@ -3,7 +3,7 @@
   <div class="container">
     <br>
     <center>
-          <label class="left font2" style="font-size:48px;font-weight:bold;">ลุงอ้วน</label><br>
+          <label class="left font2" style="font-size:48px;font-weight:bold;"> {{ resturant_name[0].name }}</label><br>
           <div class="card-header" style="border-radius:10px;border:1px solid black;width:800px;margin-left:5px">
     <table>
   
@@ -27,9 +27,17 @@
         <td style="width:400px;">
           
           <label class="left font2" style="font-size:20px;font-weight:bold;">ประเภทอาหาร</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">อาหารตามสั่ง</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px"><font v-for="cat in resturant_name[0].category" :key="cat"> {{cat}} <br></font></label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">เวลาเปิด-ปิด</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">จันทร์ - ศุกร์</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px">
+            Monday : {{resturant_name[0].date[0].monday}} <br>
+            Tuesday : {{resturant_name[0].date[0].tuesday}} <br>
+            Wednesday : {{resturant_name[0].date[0].wednesday}} <br>
+            Thursday : {{resturant_name[0].date[0].thursday}} <br>
+            Friday : {{resturant_name[0].date[0].friday}} <br>
+            Saturday : {{resturant_name[0].date[0].saturday}} <br>
+            Sunday : {{resturant_name[0].date[0].sunday}} <br>
+            </label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">เรทราคา</label><br>
           <label class="left font2" style="font-size:20px;margin-left:30px">ต่ำกว่า 100 บาท</label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">ตัวเลือกการบริการ</label><br>
@@ -73,7 +81,55 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+// import Mydata from "./MyData";
+export default {
+  name:"Details",
+  props:{
+    
+  },
+  data() {
+    return {
+      resturant_name:[],
+      
+    }
+  },
+  created() {
+    let apiURL = `http://localhost:2002/api/getData/${this.$route.params.id}`
+    console.log("created");
+    console.log(this.$route.params.id);
+    axios.get(apiURL).then((res) => {
+      this.resturant_name = res.data
+      
+    })
+  },
+  
+  mounted() {
+    
+    axios
+      .get(`http://www.localhost:2002/api/getData/`)
+      .then((response) => {
+        console.log("First");
+    console.log(response.data.data[0]._id)
+        console.log("",response.data.data);
+        this.resturant_name = response.data.data
+        console.log(this.resturant_name);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+    
+      //console.log(this.resturant_name)
+      
+  },
+  components:{
+    
+  },
+  methods: {
+    
+  },
+};
 </script>
 
 <style>

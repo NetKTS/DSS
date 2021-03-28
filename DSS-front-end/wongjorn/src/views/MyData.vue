@@ -28,7 +28,7 @@
             <br> Sunday : {{ item.date[0].sunday }} </td>
             <td>{{ item.location }}</td>
             <!-- <td>{{ item.map }}</td> -->
-            <td><button>Edit</button></td>
+            <td><router-link :to="{name:'Details', params: {id: item._id}}" ><button >Edit {{ item._id}}</button></router-link></td>
             <td><button>Delete</button></td>
         </tr>
 
@@ -41,20 +41,25 @@
 <script>
 import axios from "axios";
 import Header from "../components/layout/Header";
+// import { mapActions, mapGetters } from 'vuex';
+
 export default {
   components: { Header },
   name: "MyData",
   data() {
       return {
           resturant_name:[],
-          time:""
+          time:"",
+          mychoice:1
       }
   },
   mounted() {
+    
     axios
-      .get("http://www.localhost:2002/api/getData/")
+      .get(`http://www.localhost:2002/api/getData/`)
       .then((response) => {
-        
+        console.log("First");
+    console.log(response.data.data[0]._id)
         console.log("",response.data.data);
         this.resturant_name = response.data.data
         console.log(this.resturant_name);
@@ -62,6 +67,8 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+      
+    
       //console.log(this.resturant_name)
       
   },
