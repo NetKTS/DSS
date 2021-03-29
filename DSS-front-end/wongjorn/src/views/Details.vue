@@ -15,9 +15,7 @@
           <center>
           <h3 class="font2">แผนที่</h3>
           <br>
-          <router-link :to="{name:'Map', params: {payload: getitem}}">
           <img src="../assets/map.png" style="width:70%">
-          </router-link>
           </center>
         </td>
         <td style="width:50px;" class="center" >
@@ -82,7 +80,6 @@
 </template>
 
 <script>
-import axios from "axios";
 // import Mydata from "./MyData";
 export default {
   name:"Details",
