@@ -1,6 +1,5 @@
 <template>
-<body>
-  <div class="container">
+  <div class="body">
     <br>
     <center>
           <label class="left font2" style="font-size:48px;font-weight:bold;">{{ getitem.name }}</label><br>
@@ -75,8 +74,8 @@
           </router-link>
         </center>
       </div>
+      <br>
   </div>
-  </body>
 </template>
 
 <script>

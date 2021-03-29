@@ -2,31 +2,30 @@
   <div class="bgcolor body">
 <!--    pic cover   -->
     <div style="padding-top: 30px">
-    <table style="width: 100%;height: auto">
-      <tr>
-        <td style="border-collapse: collapse;width:450px;">
-          <hr
-              style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:450px"
-          />
-        </td>
-        <td style="border-collapse: collapse;width:100%;height: auto;position:center;">
-          <div class="align-items-center center">
-            <router-link to="/Home_info">
-              <img
-                  src="../assets/wongjornlogo2.png"
-                  style="width:6.5rem;height: auto;"
-                  alt=""
+    <table>
+          <tr>
+            <td style="border-collapse: collapse;width:450px;">
+              <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
               />
-            </router-link>
-          </div>
-        </td>
-        <td style="border-collapse: collapse;width:450px">
-          <hr
-              style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:450px"
-          />
-        </td>
-      </tr>
-    </table>
+            </td>
+            <td style="border-collapse: collapse;width:200px;position:center;">
+              <center>
+                <router-link to="/login">
+                  <img
+                    src="../assets/wongjornlogo2.png"
+                    style="width:60%;height:60%"
+                    alt=""
+                /></router-link>
+              </center>
+            </td>
+            <td style="border-collapse: collapse;width:450px">
+              <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
+            </td>
+          </tr>
+        </table>
     </div>
 <!--    search box    -->
     <b-row>
@@ -39,18 +38,18 @@
 
       <b-col></b-col>
 <!--    find restaurant btn    -->
-      <b-col style="padding-left: 450px;width: 100%;height: auto;">
+      <b-col style="padding-left: 510px;width: 100%;height: auto;">
         <router-link to="/form">
-          <b-button variant="warning">ค้นหาร้านอาหารที่ใกล้ที่สุด</b-button>
+          <b-button variant="warning" class="font2">ค้นหาร้านอาหารที่ใกล้ที่สุด</b-button>
         </router-link>
       </b-col>
     </b-row>
 
 <!--    popular restaurant    -->
-    <div class="my-5 text-center container font2" style="background-color: whitesmoke;">
+    <div class="my-5 text-center container font2" style="background-color: whitesmoke;border-radius:10px;border:1px solid black">
       <!--        text title      -->
       <div class="row mb-2">
-        <div class="col text-md-left text-center">
+        <div class="col text-md-left text-center" style="padding-top:5px">
           <p style="font-size: 30px;font-weight: bolder">ร้านอาหารยอดนิยมในปราจีนบุรี</p>
 <!--          <p class="lead">Does what it says on the tin.</p>-->
         </div>
@@ -76,18 +75,20 @@
               <div class="carousel-item active" >
                 <div class="row">
 <!--                  card 1.1  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article">
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <router-link to="/Details" style="color:white">
+                    <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;">
                       <b-card-text>
                         hello
                       </b-card-text>
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
-
+</router-link>
                   </div>
+                  
 <!--                  card 1.2  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article">
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black">
                       <b-card-text>
                         hello
                       </b-card-text>
@@ -95,8 +96,8 @@
 <!--                    <img src="../assets/wongjornlogo2.png">-->
                   </div>
 <!--                  card 1.3  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center" >
-                    <b-card title="Card Title 1" img-src="../assets/foodtest.png" img-alt="Image" img-top tag="article">
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <b-card title="Card Title 1" img-src="../assets/foodtest.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
                       <b-card-text>
                         hello
                       </b-card-text>
@@ -109,8 +110,8 @@
               <div class="carousel-item">
                 <div class="row">
 <!--                  card2.1 -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article">
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
                       <b-card-text>
                         hello
                       </b-card-text>
@@ -118,8 +119,8 @@
 <!--                    <img src="../assets/wongjornlogo2.png">-->
                   </div>
 <!--                  card 2.2  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article">
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
                       <b-card-text>
                         hello
                       </b-card-text>
@@ -127,8 +128,8 @@
 <!--                    <img src="../assets/wongjornlogo2.png">-->
                   </div>
 <!--                  card 2.3  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center" >
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article">
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font" >
+                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
                       <b-card-text>
                         hello
                       </b-card-text>
@@ -154,9 +155,9 @@
     </div>
 
 <!--    categories  -->
-    <div class="my-5 text-center container font2" style="background-color: whitesmoke">
+    <div class="my-5 text-center container font2" style="background-color: whitesmoke;border:1px solid black;border-radius:10px">
       <div class="row mb-2">
-        <div class="col text-md-left">
+        <div class="col text-md-left"  style="padding-top:5px">
           <p style="font-size: 30px;font-weight: bolder">หาร้านอาหารตามประเภท</p>
           <!--          <p class="lead">Does what it says on the tin.</p>-->
         </div>
@@ -182,10 +183,10 @@
                 <div class="row">
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
-                    <div class="container2">
-                      <img src="../assets/cok2.jpg" alt="" class="image">
+                    <div class="container2 image">
+                      <img src="../assets/cok2.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle">tom yum</div>
+                        <div class="text middle font" style="color:white">tom yum</div>
                       </div>
                     </div>
 
@@ -193,19 +194,19 @@
                   </div>
 <!--                  card 1.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <div class="container2">
-                      <img src="../assets/cok3.jpg" alt="" class="image">
+                    <div class="container2 image">
+                      <img src="../assets/cok3.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle">som tum</div>
+                        <div class="text middle font" style="color:white">som tum</div>
                       </div>
                     </div>
                   </div>
 <!--                  card 1.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
-                    <div class="container2">
-                      <img src="../assets/foodtest.png" alt="" class="image">
+                    <div class="container2 image">
+                      <img src="../assets/foodtest.png" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle">mai ru</div>
+                        <div class="text middle font" style="color:white">mai ru</div>
                       </div>
                     </div>
                   </div>
@@ -216,28 +217,28 @@
                 <div class="row">
 <!--                  card 2.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <div class="container2">
-                      <img src="../assets/logo.png" alt="" class="image">
+                    <div class="container2 image">
+                      <img src="../assets/logo.png" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle">mai ru</div>
+                        <div class="text middle font" style="color:white">mai ru</div>
                       </div>
                     </div>
                   </div>
 <!--                  card 2.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                    <div class="container2">
-                      <img src="../assets/logo.png" alt="" class="image">
+                    <div class="container2 image">
+                      <img src="../assets/logo.png" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle">mai ru</div>
+                        <div class="text middle font" style="color:white">mai ru</div>
                       </div>
                     </div>
                   </div>
 <!--                  card 2.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
-                    <div class="container2">
-                      <img src="../assets/logo.png" alt="" class="image">
+                    <div class="container2 image">
+                      <img src="../assets/logo.png" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle">mai ru</div>
+                        <div class="text middle font" style="color:white">mai ru</div>
                       </div>
                     </div>
                   </div>
@@ -258,6 +259,7 @@
         </div>
       </div>
     </div>
+    <br>
   </div>
 
 </template>
@@ -285,6 +287,7 @@ export default {
 /*}*/
 .font2 {
   font-family: Athiti, serif;
+  
 }
 .carousel-nav-icon {
   height: 48px;
@@ -342,6 +345,7 @@ export default {
   font-size: 17px;
   padding: 16px 32px;
 
+
 }
 .body {
   background-color: #efede8;
@@ -361,6 +365,9 @@ export default {
 }
 img {
   width: 100%;
-  height: auto;
+  height: 170px;
+}
+image {
+  width: 100%;
 }
 </style>

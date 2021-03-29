@@ -4,7 +4,7 @@
       <router-link to="/Home_info">
       <a>
         <img
-          style="width:30%;margin-top:7%;opacity:1;"
+          style="width:40%;height:40%;margin-top:12%;opacity:1;"
           id="img1"
           src="../assets/wongjornlogo2.png"
         />
