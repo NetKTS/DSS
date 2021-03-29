@@ -15,8 +15,9 @@
           <center>
           <h3 class="font2">แผนที่</h3>
           <br>
-          
+          <router-link :to="{name:'Map', params: {payload: getitem}}">
           <img src="../assets/map.png" style="width:70%">
+          </router-link>
           </center>
         </td>
         <td style="width:50px;" class="center" >
@@ -96,16 +97,11 @@ export default {
   },
   created() {
     this.getitem = this.$route.params.payload
-    let apiURL = `http://localhost:2002/api/getData/${this.getId.id}`
     console.log("created");
     console.log(this.$route.params);
     
     console.log("getId");
     console.log(this.getId.id);
-    axios.get(apiURL).then((res) => {
-      this.resturant_name = res.data
-      
-    })
   },
   components:{
     
