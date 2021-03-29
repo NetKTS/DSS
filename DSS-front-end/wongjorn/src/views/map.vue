@@ -1,5 +1,6 @@
 <template >
 <div>
+    <div class="container"> <h1> ชื่อร้าน : {{ getitem.name }} </h1></div>
      <longdo-map :zoom="10" :lastView="false">         
         <longdo-map-marker             
             v-for="(item, i) in markers"             
@@ -10,7 +11,7 @@
         />     
     </longdo-map> 
     <div>
-        <h1> hello </h1>
+        <h1> {{   }} </h1>
     </div>
 </div>
 </template>
@@ -25,15 +26,31 @@ export default {
     },
     data() {
         return {
+            getitem:{},
             markers:[
                 {
-                location: {lon:100.58,lat:13.761 },
-                title:"Vue Marker",
-                detail: "This is a detail"
+                location: {lon: Number,lat: Number },
+                title:"",
+                detail: ""
                 }
             ]
         }
     },
+    created() {
+    this.getitem = this.$route.params.payload
+    
+    this.markers[0].location.lon = parseFloat(this.getitem.map[0].long)
+    this.markers[0].location.lat = parseFloat(this.getitem.map[0].lat)
+    this.markers[0].title = this.getitem.name
+    this.markers[0].detail = this.getitem.location
+
+    // console.log(this.markers[0].location.lon)
+    if(this.getitem == null){
+      console.log("get item Error")
+      window.location="#/MyData"
+      
+    }
+  },
 }
 </script>
 

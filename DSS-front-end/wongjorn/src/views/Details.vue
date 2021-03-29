@@ -14,11 +14,14 @@
           <center>
           <h3 class="font2">แผนที่</h3>
           <br>
+          <router-link :to="{name:'Map', params: {payload: getitem}}">
           <img src="../assets/map.png" style="width:70%">
+          </router-link>
+          <br> กดเพื่อ แสดงแผนที่
           </center>
         </td>
         <td style="width:50px;" class="center" >
-          <hr
+md          <hr
                 style="border-radius: 5px;height:500px;border-width:0;color:black;background-color:black;width:1px"
               />
         </td>
@@ -57,7 +60,6 @@
             class="btn btn-secondary font"
             style="width:100px"
             type="clear"
-            @click="clear"
           >
             Back
           </button>
@@ -67,7 +69,6 @@
             class="btn btn-primary pad font"
             style="width:100px"
             type="submit"
-            @click="submit"
           >
             Main
           </button>
@@ -93,11 +94,15 @@ export default {
   },
   created() {
     this.getitem = this.$route.params.payload
+    if(this.getitem == null){
+      console.log("get item Error")
+      window.location="#/MyData"
+    }
     console.log("created");
-    console.log(this.$route.params);
+    // console.log(this.$route.params);
     
     console.log("getId");
-    console.log(this.getId.id);
+    console.log(this.getitem._id);
   },
   components:{
     
