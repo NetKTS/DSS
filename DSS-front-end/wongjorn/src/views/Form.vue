@@ -187,7 +187,7 @@
                   <label class="custom-control-label" for="radio7">
                     ของหวาน / คาเฟ่ต์</label
                   >
-         s       </div>
+                </div>
               </td>
               <td style="border-collapse: collapse;width:275px;">
                 <div class="custom-control custom-radio">
