@@ -28,7 +28,7 @@
             <br> Sunday : {{ item.date[0].sunday }} </td>
             <td>{{ item.location }}</td>
             <!-- <td>{{ item.map }}</td> -->
-            <td><button>Edit</button></td>
+            <td><router-link :to="{name:'Details', params: {payload: item}}"><button>Edit</button></router-link> </td>
             <td><button>Delete</button></td>
         </tr>
 

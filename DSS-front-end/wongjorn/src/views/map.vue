@@ -1,4 +1,5 @@
 <template >
+<div>
      <longdo-map :zoom="10" :lastView="false">         
         <longdo-map-marker             
             v-for="(item, i) in markers"             
@@ -8,7 +9,10 @@
             :detail="item.detail"     
         />     
     </longdo-map> 
-
+    <div>
+        <h1> hello </h1>
+    </div>
+</div>
 </template>
 
 <script>
@@ -21,12 +25,6 @@ export default {
     },
     data() {
         return {
-            locationList:[
-                { lon:99,lat:14 },
-                { lon:100,lat:13 },
-                { lon:102,lat:13 },
-                { lon:103,lat:14 }
-            ],
             markers:[
                 {
                 location: {lon:100.58,lat:13.761 },

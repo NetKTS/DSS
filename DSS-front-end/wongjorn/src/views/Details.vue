@@ -3,7 +3,7 @@
   <div class="container">
     <br>
     <center>
-          <label class="left font2" style="font-size:48px;font-weight:bold;">ลุงอ้วน</label><br>
+          <label class="left font2" style="font-size:48px;font-weight:bold;">{{ getitem.name }}</label><br>
           <div class="card-header" style="border-radius:10px;border:1px solid black;width:800px;margin-left:5px">
     <table>
   
@@ -27,17 +27,25 @@
         <td style="width:400px;">
           
           <label class="left font2" style="font-size:20px;font-weight:bold;">ประเภทอาหาร</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">อาหารตามสั่ง</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px"><font v-for="cat in getitem.category" :key="cat"> {{cat}} <br></font></label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">เวลาเปิด-ปิด</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">จันทร์ - ศุกร์</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px">
+            Monday : {{getitem.date[0].monday}} <br>
+            Tuesday : {{getitem.date[0].tuesday}} <br>
+            Wednesday : {{getitem.date[0].wednesday}} <br>
+            Thursday : {{getitem.date[0].thursday}} <br>
+            Friday : {{getitem.date[0].friday}} <br>
+            Saturday : {{getitem.date[0].saturday}} <br>
+            Sunday : {{getitem.date[0].sunday}} <br>
+            </label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">เรทราคา</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">ต่ำกว่า 100 บาท</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px">{{ getitem.pricerate }}</label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">ตัวเลือกการบริการ</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">สั่งกลับบ้าน , นั่งรับประทานอาหารที่ร้าน</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px"><font v-for="ser in getitem.service" :key="ser"> {{ser}} <br> </font></label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">เบอร์โทรติดต่อ</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">061-389-4556</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px"><font v-for="tel in getitem.tel" :key="tel"> {{tel}}</font></label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">ที่อยู่ร้าน</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px">ตำบล เนินหอม อำเภอเมืองปราจีนบุรี ปราจีนบุรี 25230</label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px">{{ getitem.location }}</label><br>
         </td>
       </tr>
     </table>
@@ -73,7 +81,40 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+// import Mydata from "./MyData";
+export default {
+  name:"Details",
+  props:{
+    
+  },
+  data() {
+    return {
+      resturant_name:[],
+      getitem:{}
+    }
+  },
+  created() {
+    this.getitem = this.$route.params.payload
+    let apiURL = `http://localhost:2002/api/getData/${this.getId.id}`
+    console.log("created");
+    console.log(this.$route.params);
+    
+    console.log("getId");
+    console.log(this.getId.id);
+    axios.get(apiURL).then((res) => {
+      this.resturant_name = res.data
+      
+    })
+  },
+  components:{
+    
+  },
+  methods: {
+    
+  }
+}
+
 </script>
 
 <style>

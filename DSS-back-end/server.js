@@ -68,11 +68,16 @@ app.get('/restname',(req, res) => {
     res.json(Schema)
 })
 
-app.get('/restname/:name',(req, res) => {
+app.get('/restname/:id',(req, res) => {
+    namelistRoutes.getById
+})
+
+
+/*app.get('/restname/:name',(req, res) => {
     const { name } = req.params
     const result = Namelist.find(payload => payload.name === name)
     res.json(result)
-})
+})*/
 
 app.post('/restname',(req, res) => {
     const payload = req.body
