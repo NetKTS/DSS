@@ -42,6 +42,14 @@
 
       </tr>
       <tr>
+        <td colspan="2" style="border-collapse: collapse;width:450px;">
+          <hr
+              style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
+          />
+        </td>
+      </tr>
+
+      <tr>
         <td class="w-25" style="padding-top: 40px;">
 
           <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">

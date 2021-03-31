@@ -32,8 +32,8 @@
       <tr>
         <td class="w-25 container-fluid">
           <div class="container-fluid">
-            <b-form-input v-model="text" placeholder="Enter name or category" style="right: initial"></b-form-input>
-            <div class="mt-2">Value: {{ text }}</div>
+            <b-form-input v-model="text" placeholder="Enter name or category"></b-form-input>
+<!--            <div class="mt-2">Value: {{ text }}</div>-->
           </div>
         </td>
         <td class="vw-100 text-right container-fluid" style="padding-top: 50px;width: 100%;height: auto">
@@ -50,9 +50,9 @@
     </table>
 
 <!--    popular restaurant    -->
-    <div class="my-5 text-center font2 align-content-md-center" style="background-color: whitesmoke;border-radius:10px;border:1px solid black">
+    <div class="my-5 text-center font2 align-content-md-center" style="background-color: whitesmoke;border-radius:1vw;border:1px solid black">
       <!--        text title      -->
-      <div class="row mb-2">
+      <div class="row mb-2 container-fluid">
         <div class="col text-md-left text-center" style="padding-top:5px">
           <p style="font-size: 30px;font-weight: bolder">ร้านอาหารยอดนิยมในปราจีนบุรี</p>
 <!--          <p class="lead">Does what it says on the tin.</p>-->
@@ -61,7 +61,7 @@
 <!--      slideshow     -->
       <div class="row d-flex align-items-center">
 <!--        previous btn    -->
-        <div class="col-1 d-flex align-items-center justify-content-center">
+        <div class="col-1 d-flex align-items-center justify-content-center container-fluid">
           <a href="#carouselExampleIndicators" role="button" data-slide="prev">
             <div class="carousel-nav-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129">
@@ -81,13 +81,13 @@
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
                     <router-link to="/Details" style="color:white">
-                    <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
-                    </b-card>
+                      <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;width: auto">
+                        <b-card-text>
+                          hello
+                        </b-card-text>
+                      </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
-</router-link>
+                    </router-link>
                   </div>
                   
 <!--                  card 1.2  -->
@@ -102,12 +102,13 @@
 <!--                  card 1.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
                     <b-card title="Card Title 1" img-src="../assets/foodtest.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
+                      <b-card-text >
                         hello
                       </b-card-text>
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
                   </div>
+
                 </div>
               </div>
 <!--              slide 2 -->
@@ -159,7 +160,7 @@
     </div>
 
 <!--    categories  -->
-    <div class="my-5 text-center container font2" style="background-color: whitesmoke;border:1px solid black;border-radius:10px">
+    <div class="my-5 text-center container-fluid font2" style="background-color: whitesmoke;border:1px solid black;border-radius:10px">
       <div class="row mb-2">
         <div class="col text-md-left"  style="padding-top:5px">
           <p style="font-size: 30px;font-weight: bolder">หาร้านอาหารตามประเภท</p>
@@ -341,7 +342,7 @@ export default {
   width: 100%;
   height: auto;
   transition: .5s ease;
-  backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .text {
   color: black;
@@ -349,8 +350,8 @@ export default {
   font-size: 17px;
   padding: 16px 32px;
 
-
 }
+
 .body {
   background-color: #efede8;
   animation: fadeInAnimation ease 2s;
