@@ -28,25 +28,29 @@
         </table>
     </div>
 <!--    search box    -->
-    <b-row>
-      <b-col>
-        <div>
-          <b-form-input v-model="text" placeholder="Enter name or category"></b-form-input>
-          <div class="mt-2">Value: {{ text }}</div>
-        </div>
-      </b-col>
-
-      <b-col></b-col>
-<!--    find restaurant btn    -->
-      <b-col style="padding-left: 510px;width: 100%;height: auto;">
-        <router-link to="/form">
-          <b-button variant="warning" class="font2">ค้นหาร้านอาหารที่ใกล้ที่สุด</b-button>
+    <table class="table-responsive-md table-bordered">
+      <tr>
+        <td class="w-25 container-fluid">
+          <div class="container-fluid">
+            <b-form-input v-model="text" placeholder="Enter name or category" style="right: initial"></b-form-input>
+            <div class="mt-2">Value: {{ text }}</div>
+          </div>
+        </td>
+        <td class="vw-100 text-right container-fluid" style="padding-top: 50px;width: 100%;height: auto">
+          <router-link to="/form">
+            <b-button variant="warning" class="font2 btn-sm">ค้นหาร้านอาหารที่ใกล้ที่สุด</b-button>
+          </router-link>
+        </td>
+      </tr>
+      <tr>
+        <router-link to="/search">
+          <b-button variant="warning" class="font2 btn-sm">search</b-button>
         </router-link>
-      </b-col>
-    </b-row>
+      </tr>
+    </table>
 
 <!--    popular restaurant    -->
-    <div class="my-5 text-center container font2" style="background-color: whitesmoke;border-radius:10px;border:1px solid black">
+    <div class="my-5 text-center font2 align-content-md-center" style="background-color: whitesmoke;border-radius:10px;border:1px solid black">
       <!--        text title      -->
       <div class="row mb-2">
         <div class="col text-md-left text-center" style="padding-top:5px">

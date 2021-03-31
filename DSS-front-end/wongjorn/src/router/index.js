@@ -10,6 +10,7 @@ import AddData from '../views/AddData.vue'
 import Map from '../views/map.vue'
 import Home_info from '../views/Home_info.vue'
 import Details from '../views/Details.vue'
+import Search from '../views/search.vue'
 
 Vue.use(VueRouter)
 
@@ -63,6 +64,11 @@ const routes = [
     path: '/Details',
     name: 'Details',
     component: Details
+  },
+  {
+    path: '/Search',
+    name: 'Search',
+    component: Search
   }
 
 ]
