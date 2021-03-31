@@ -28,7 +28,7 @@
         </table>
     </div>
 <!--    search box    -->
-    <table class="table-responsive-md table-bordered">
+    <table class="table-responsive-md">
       <tr>
         <td class="w-25 container-fluid">
           <div class="container-fluid">
