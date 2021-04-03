@@ -1,6 +1,8 @@
 <template>
   <div class="bgcolor body">
+    <Home class="container"/>
 <!--    pic cover   -->
+<center>
     <div style="padding-top: 30px">
     <table>
           <tr>
@@ -27,26 +29,32 @@
           </tr>
         </table>
     </div>
+    </center>
 <!--    search box    -->
-    <table class="table-responsive-md">
+    <table>
       <tr>
         <td class="w-25 container-fluid">
-          <div class="container-fluid">
+          <div class="container-fluid" style="margin-left:-30px">
             <b-form-input v-model="text" placeholder="Enter name or category"></b-form-input>
 <!--            <div class="mt-2">Value: {{ text }}</div>-->
           </div>
         </td>
-        <td class="vw-100 text-right container-fluid" style="padding-top: 50px;width: 100%;height: auto">
+        <td>
+          <router-link to="/search">
+          <b-button variant="warning" class="font2 btn-sm" style="margin-left:-50px">search</b-button>
+        </router-link>
+        </td>
+        <td class="vw-100 text-right" style="width: 100%;height: auto;">
           <router-link to="/form">
             <b-button variant="warning" class="font2 btn-sm">ค้นหาร้านอาหารที่ใกล้ที่สุด</b-button>
           </router-link>
         </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <router-link to="/search">
           <b-button variant="warning" class="font2 btn-sm">search</b-button>
         </router-link>
-      </tr>
+      </tr> -->
     </table>
 
 <!--    popular restaurant    -->
@@ -143,6 +151,38 @@
                   </div>
                 </div>
               </div>
+<!--              slide 3 -->
+              <div class="carousel-item">
+                <div class="row">
+<!--                  card3.1 -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                      <b-card-text>
+                        hello
+                      </b-card-text>
+                    </b-card>
+<!--                    <img src="../assets/wongjornlogo2.png">-->
+                  </div>
+<!--                  card 3.2  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                      <b-card-text>
+                        hello
+                      </b-card-text>
+                    </b-card>
+<!--                    <img src="../assets/wongjornlogo2.png">-->
+                  </div>
+<!--                  card 3.3  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font" >
+                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                      <b-card-text>
+                        hello
+                      </b-card-text>
+                    </b-card>
+<!--                    <img src="../assets/wongjornlogo2.png">-->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!--End carousel-->
@@ -189,66 +229,226 @@
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <img src="../assets/cok2.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <router-link to="search">
+                      <img src="https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2019/03/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AA%E0%B8%B1%E0%B8%9A-1.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle font" style="color:white">tom yum</div>
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารตามสั่ง</b-button> 
+                          </div>
                       </div>
+                      </router-link>
                     </div>
-
-
                   </div>
 <!--                  card 1.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <img src="../assets/cok3.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <router-link to="search">
+                      <img src="https://bottomlineis.co/uploads/images/image_750x_5d691a8d5f2f9.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle font" style="color:white">som tum</div>
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">ก๋วยเตี๋ยว</b-button> 
+                          </div>
                       </div>
+                      </router-link>
                     </div>
                   </div>
 <!--                  card 1.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <img src="../assets/foodtest.png" alt="" style="border-radius:10px;border:1px solid black">
+                      <router-link to="search">
+                      <img src="https://storage.thaipost.net/main/uploads/photos/big/20190528/image_big_5cecea82795fa.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle font" style="color:white">mai ru</div>
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารไทย</b-button> 
+                          </div>
                       </div>
+                      </router-link>
                     </div>
                   </div>
                 </div>
               </div>
+
+
 <!--              slide 2   -->
               <div class="carousel-item">
                 <div class="row">
 <!--                  card 2.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <img src="../assets/logo.png" alt="" style="border-radius:10px;border:1px solid black">
+                      <router-link to="search">
+                      <img src="http://1.bp.blogspot.com/-5SQlytVoinE/VHYd1tftnZI/AAAAAAAAAJw/wIccsQKgGMc/s1600/%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%81.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle font" style="color:white">mai ru</div>
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">สเต๊ก</b-button> 
+                          </div>
                       </div>
+                      </router-link>
                     </div>
                   </div>
 <!--                  card 2.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <img src="../assets/logo.png" alt="" style="border-radius:10px;border:1px solid black">
+                      <router-link to="search">
+                      <img src="https://food.mthai.com/app/uploads/2015/06/iStock_000049519500_Small.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle font" style="color:white">mai ru</div>
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารอีสาน</b-button> 
+                          </div>
                       </div>
+                      </router-link>
                     </div>
                   </div>
 <!--                  card 2.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <img src="../assets/logo.png" alt="" style="border-radius:10px;border:1px solid black">
+                      <router-link to="search">
+                      <img src="http://f.ptcdn.info/658/041/000/o5cr2xgpr3N1gRNJ1LU-o.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
-                        <div class="text middle font" style="color:white">mai ru</div>
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">บุฟเฟ่ต์</b-button> 
+                          </div>
                       </div>
+                      </router-link>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!--              slide 3   -->
+              <div class="carousel-item">
+                <div class="row">
+<!--                  card 3.1  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="http://f.ptcdn.info/686/024/000/1413800215-2014101714-o.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">ปิ้งย่าง</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+<!--                  card 3.2  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://img.kapook.com/u/2015/surauch/cook2/PT1.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารจานเดียว</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+<!--                  card 3.3  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center" >
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://i0.wp.com/shopee.co.th/blog/wp-content/uploads/2020/10/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%81%E0%B9%88.jpg?resize=1280%2C720&ssl=1" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">ฟาสต์ฟู้ด / อาหารจานด่วน</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--              slide 4   -->
+              <div class="carousel-item">
+                <div class="row">
+<!--                  card 4.1  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://api.tourismthailand.org/upload/live/content_article/4-2996.png" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารใต้</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+<!--                  card 4.2  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://aowtakiabseafood.com/wp-content/uploads/2019/01/seafood002.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารทะเล</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+<!--                  card 4.3  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center" >
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://kiji.life/eats/wp-content/uploads/2018/07/FCM_0541-1024x683.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">ชาบู / สุกี้ยากี้</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--              slide 5   -->
+              <div class="carousel-item">
+                <div class="row">
+<!--                  card 5.1  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="http://www.smeleader.com/wp-content/uploads/2015/01/%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%8B%E0%B8%B9%E0%B8%8A%E0%B8%B4-JJ-Sushi-Foods-%E0%B9%81%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%96%E0%B8%B8%E0%B8%94%E0%B8%B4%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B8%94%E0%B9%80%E0%B8%AD-%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%9D%E0%B8%B1%E0%B8%99%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%8B%E0%B8%B9%E0%B8%8A%E0%B8%B4-2.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">อาหารต่างประเทศ</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+<!--                  card 5.2  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center">
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://s359.kapook.com/pagebuilder/6ed57640-526b-4dd4-bf60-4f9fe6b4f16b.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:100px">ของหวาน / คาเฟ่ต์</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+<!--                  card 5.3  -->
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center" >
+                    <div class="container2 image">
+                      <router-link to="search">
+                      <img src="https://www.falconforprofessional.com/sites/default/files/green_tea_thumbnail_0.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <div class="overlay">
+                        <div class="middle font2" style="color:white">
+                          <b-button variant="light" style="width:auto">เครื่องดื่ม</b-button> 
+                          </div>
+                      </div>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
           <!--End carousel-->
@@ -265,31 +465,60 @@
       </div>
     </div>
     <br>
+
+    <!-- <table class="container" border="1">
+      <tr v-for="(item,index) in resturant_name" :key="index" >
+            <td>{{ item.name }}</td>
+            <td><router-link :to="{name:'Details', params: {payload: item}}"><button>Edit</button></router-link> </td>
+        </tr>
+    </table> -->
   </div>
 
 </template>
 
 
 <script>
-// @ is an alias to /src
+import axios from "axios";
+import Home from "../components/layout/Home";
 export default {
-  // name: 'Home',
-  // components: {
-  // },
-
+  components: { Home },
+  name: "MyData",
   data() {
-    return{
-      text: ''
-    }
-  }
-}
+      return {
+          resturant_name:[],
+          time:"",
+          category:"",
+          name:""
+      }
+  },
+  mounted() {
+    axios
+      .get("http://www.localhost:2002/api/getData/")
+      .then((response) => {
+        
+        console.log("",response.data.data);
+        this.resturant_name = response.data.data
+        console.log(this.resturant_name);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      //console.log(this.resturant_name)
+  },
+  methods: {
+    subtime(){
+      
+    },
+    
+  },
+};
 
 </script>
 
 <style>
-/*.font {*/
-/*  font-family: Oswald;*/
-/*}*/
+.font {
+  font-family: Oswald;
+}
 .font2 {
   font-family: Athiti, serif;
   

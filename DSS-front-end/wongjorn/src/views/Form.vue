@@ -1,6 +1,7 @@
 <template lang="">
   <div class="body" style="padding-top: 30px">
     <form action="" style="font-size:20px">
+      <center>
         <table>
           <tr>
             <td style="border-collapse: collapse;width:450px;">
@@ -25,7 +26,7 @@
             </td>
           </tr>
         </table>
-      
+      </center>
       <br>
 
       <center>
@@ -39,7 +40,7 @@
       />
       <div
         class="card-header"
-        style="border-radius:10px;border:1px solid black;width:225px;margin-left:5px;"
+        style="border-radius:10px;border:1px solid black;width:225px;"
       >
         <h3 style="color:black;" class="font">
           Today :
@@ -57,14 +58,14 @@
 
       <div
         class="card-header"
-        style="border-radius:10px;border:1px solid black;width:auto;margin-left:5px"
+        style="border-radius:10px;border:1px solid black;width:auto;"
       >
 
         <label for="category" class="font2" style="font-size:24px;font-weight:bold;"
           >ประเภทอาหาร</label
         >
         <hr
-          style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:1055px"
+          style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:auto"
         />
         <table>
           <div class="form-check font2">
@@ -331,13 +332,13 @@
 
       <div
         class="card-header"
-        style="border-radius:10px;border:1px solid black;width:auto;margin-left:5px"
+        style="border-radius:10px;border:1px solid black;width:auto"
       >
         <label for="pricerate" class="font2" style="font-size:24px;font-weight:bold;">
           เรทราคา</label
         >
         <hr
-          style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:1055px"
+          style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:auto"
         />
         <table>
           <div class="form-check font2">

@@ -21,14 +21,14 @@
           </center>
         </td>
         <td style="width:50px;" class="center" >
-md          <hr
+         <hr
                 style="border-radius: 5px;height:500px;border-width:0;color:black;background-color:black;width:1px"
               />
         </td>
         <td style="width:400px;">
           
           <label class="left font2" style="font-size:20px;font-weight:bold;">ประเภทอาหาร</label><br>
-          <label class="left font2" style="font-size:20px;margin-left:30px"><font v-for="cat in getitem.category" :key="cat"> {{cat}} <br></font></label><br>
+          <label class="left font2" style="font-size:20px;margin-left:30px"><font v-for="cat in getitem.category" :key="cat"> {{cat}} </font></label><br>
           <label class="left font2" style="font-size:20px;font-weight:bold;">เวลาเปิด-ปิด</label><br>
           <label class="left font2" style="font-size:20px;margin-left:30px">
             Monday : {{getitem.date[0].monday}} <br>
