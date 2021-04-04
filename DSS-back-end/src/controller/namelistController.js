@@ -54,6 +54,15 @@ exports.getallData = (req, res) => {
     });
 }
 
+exports.getRandomData = (req, res) => {
+    myran = Math.random() * 338
+    Namelist.find({}).skip(myran).limit(9).exec((error, data) => {
+        if(error) return res.status(400).json({ error });
+        if(data) {
+            return res.status(200).json({ data });
+        }
+    });
+}
 // ------
 
 

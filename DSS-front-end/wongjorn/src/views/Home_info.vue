@@ -62,7 +62,7 @@
       <!--        text title      -->
       <div class="row mb-2 container-fluid">
         <div class="col text-md-left text-center" style="padding-top:5px">
-          <p style="font-size: 30px;font-weight: bolder">ร้านอาหารยอดนิยมในปราจีนบุรี</p>
+          <p style="font-size: 30px;font-weight: bolder">{{resturant_name[0].name}}</p>
 <!--          <p class="lead">Does what it says on the tin.</p>-->
         </div>
       </div>
@@ -495,12 +495,12 @@ export default {
   },
   mounted() {
     axios
-      .get("http://www.localhost:2002/api/getData/")
+      .get("http://www.localhost:2002/api/getrandomdata/")
       .then((response) => {
         
         console.log("",response.data.data);
         this.resturant_name = response.data.data
-        console.log(this.resturant_name);
+        console.log(this.resturant_name[0].name);
       })
       .catch((error) => {
         console.log(error);
