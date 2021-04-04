@@ -62,7 +62,7 @@
       <!--        text title      -->
       <div class="row mb-2 container-fluid">
         <div class="col text-md-left text-center" style="padding-top:5px">
-          <p style="font-size: 30px;font-weight: bolder">{{resturant_name[0].name}}</p>
+          <p style="font-size: 30px;font-weight: bolder">ร้านอาหารแนะนำ</p>
 <!--          <p class="lead">Does what it says on the tin.</p>-->
         </div>
       </div>
@@ -89,8 +89,8 @@
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
                     <router-link :to="{name:'Details', params: {payload: resturant_name[0],mylocation:coordinates}}" style="color:white">
-                      <b-card class="font2" title="CHAYA MEAT" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;width: auto">
-                        
+                      <b-card class="font2" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;width: auto">
+                        {{resturant_name[0].name}}
                       </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
                     </router-link>
@@ -98,23 +98,22 @@
                   
 <!--                  card 1.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[1],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                      {{resturant_name[1].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
 <!--                  card 1.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <b-card title="Card Title 1" img-src="../assets/foodtest.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text >
-                        hello
-                      </b-card-text>
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[2],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/foodtest.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                    {{resturant_name[2].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
-
                 </div>
               </div>
 <!--              slide 2 -->
@@ -122,30 +121,30 @@
                 <div class="row">
 <!--                  card2.1 -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[3],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                     {{resturant_name[3].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
 <!--                  card 2.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[4],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                     {{resturant_name[4].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
 <!--                  card 2.3  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center font" >
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[5],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                     {{resturant_name[5].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
                 </div>
               </div>
@@ -154,30 +153,30 @@
                 <div class="row">
 <!--                  card3.1 -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[6],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                     {{resturant_name[6].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
 <!--                  card 3.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[7],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                     {{resturant_name[7].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
 <!--                  card 3.3  -->
-                  <div class="col-12 col-md d-flex align-items-center justify-content-center font" >
-                    <b-card title="Card Title 2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
-                      <b-card-text>
-                        hello
-                      </b-card-text>
+                  <div class="col-12 col-md d-flex align-items-center justify-content-center font">
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[8],mylocation:coordinates}}" style="color:white">
+                    <b-card class="font2" img-src="../assets/wongjornlogo2.png" img-alt="Image" img-top tag="article" style="border:1px solid black">
+                     {{resturant_name[8].name}}
                     </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
+</router-link>
                   </div>
                 </div>
               </div>
