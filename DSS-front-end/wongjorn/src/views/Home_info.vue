@@ -88,7 +88,7 @@
                 <div class="row">
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
-                    <router-link to="/Details" style="color:white">
+                    <router-link :to="{name:'Details', params: {payload: resturant_name[0],mylocation:coordinates}}" style="color:white">
                       <b-card class="font2" title="CHAYA MEAT" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;width: auto">
                         
                       </b-card>
@@ -490,8 +490,15 @@ export default {
   data() {
       return {
           resturant_name:[],
+          coordinates:{},
           time:"",
       }
+  },
+  created() {
+    this.$getLocation({}).then(coordinates => {
+            this.coordinates = coordinates;
+            console.log(this.coordinates.lat,this.coordinates.lng);
+        });
   },
   mounted() {
     axios

@@ -81,6 +81,7 @@
 
 <script>
 // import Mydata from "./MyData";
+
 export default {
   name:"Details",
   props:{
@@ -99,7 +100,7 @@ export default {
     this.getitem = this.$route.params.payload
     if(this.getitem == null){
       console.log("get item Error")
-      window.location="#/MyData"
+      window.location="#/Home_info"
     }
     console.log("created");
     // console.log(this.$route.params);
