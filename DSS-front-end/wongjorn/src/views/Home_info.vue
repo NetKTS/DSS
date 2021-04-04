@@ -273,7 +273,7 @@
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
                       <router-link :to="{name:'Category', params: {id: '004'}}">
-                      <img src="http://1.bp.blogspot.com/-5SQlytVoinE/VHYd1tftnZI/AAAAAAAAAJw/wIccsQKgGMc/s1600/%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%81.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <img src="../assets/steak.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
                           <b-button variant="light" style="width:auto">สเต๊ก</b-button> 

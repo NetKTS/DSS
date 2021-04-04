@@ -86,7 +86,7 @@
           <div v-if="cat.includes(cate)">
             <table class="table-responsive-md font2">
               <tr>
-                <td class="w-25" style="padding-top: 40px">
+                <td class="w-25" style="padding-top: 0px">
                   <img
                     src="../assets/cok3.jpg"
                     class="rounded-circle img-fluid"
@@ -94,7 +94,7 @@
                   />
                 </td>
                 <td
-                  style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto"
+                  style="padding-left: 50px;padding-top: 0px;width: 100%;height: auto"
                 >
                 <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
                   <font style="font-size: 2vw;color:black ;">{{ item.name }}</font></router-link>
