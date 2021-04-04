@@ -6,6 +6,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import LongdoMap from 'longdo-map-vue'
+import Vuegeolocation from 'vue-browser-geolocation'
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,7 @@ Vue.use(LongdoMap, {
     apiKey: '68cd5510a9da9701e87d7ca5cbc8eaef'
   }
 })
+Vue.use(Vuegeolocation)
 
 new Vue({
   router,

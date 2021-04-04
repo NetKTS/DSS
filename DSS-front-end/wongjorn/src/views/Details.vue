@@ -14,7 +14,7 @@
           <center>
           <h3 class="font2">แผนที่</h3>
           <br>
-          <router-link :to="{name:'Map', params: {payload: getitem}}">
+          <router-link :to="{name:'Map', params: {payload: getitem,mylocation: mylocation}}">
           <img src="../assets/map.png" style="width:70%">
           </router-link>
           <br> กดเพื่อ แสดงแผนที่
@@ -89,10 +89,13 @@ export default {
   data() {
     return {
       resturant_name:[],
-      getitem:{}
+      getitem:{},
+      mylocation:{lng:0,lat:0}
     }
   },
   created() {
+    this.mylocation = this.$route.params.mylocation
+    console.log(this.mylocation);
     this.getitem = this.$route.params.payload
     if(this.getitem == null){
       console.log("get item Error")

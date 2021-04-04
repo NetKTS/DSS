@@ -28,7 +28,7 @@
             <br> Sunday : {{ item.date[0].sunday }} </td>
             <td>{{ item.location }}</td>
             <!-- <td>{{ item.map }}</td> -->
-            <td><router-link :to="{name:'Details', params: {payload: item}}"><button>Edit</button></router-link> </td>
+            <td><router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}"><button>Edit</button></router-link> </td>
             <td><button>Delete</button></td>
         </tr>
 
@@ -47,23 +47,39 @@ export default {
   data() {
       return {
           resturant_name:[],
-          time:""
+          coordinates:{lat:0,lng:0},
+          time:"",
+          distance:[]
       }
+  },
+  created() {
+    this.$getLocation({}).then(coordinates => {
+            this.coordinates = coordinates;
+            console.log(this.coordinates.lat,this.coordinates.lng);
+        });
   },
   mounted() {
     axios
       .get("http://www.localhost:2002/api/getData/")
       .then((response) => {
         
-        console.log("",response.data.data);
+        // console.log("",response.data.data);
         this.resturant_name = response.data.data
-        console.log(this.resturant_name);
+        // console.log(this.resturant_name);
       })
       .catch((error) => {
         console.log(error);
       });
       //console.log(this.resturant_name)
-  },
+    axios
+      .get("https://mmmap15.longdo.com/mmroute/json/route/matrix?flon[0]=100.534&flat[0]=13.745&tlon[0]=100.601&tlat[0]=13.919&key=68cd5510a9da9701e87d7ca5cbc8eaef")
+      .then((response) => {
+        console.log(response.data.data)
+        this.distance = response.data.data
+        // console.log(this.distance[0].[0].distance)   ใช้ได้
+      })   
+  }
+  ,
   methods: {
     subtime(){
       
