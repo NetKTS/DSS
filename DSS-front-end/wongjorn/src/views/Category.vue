@@ -96,8 +96,9 @@
                 <td
                   style="padding-left: 50px;padding-top: 0px;width: 100%;height: auto"
                 >
-                <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
-                  <font style="font-size: 2vw;color:black ;">{{ item.name }}</font></router-link>
+                  <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
+                    <font style="font-size: 2vw;color:black ;">{{ item.name }}</font>
+                  </router-link>
                   <p style="font-size: 1vw">
                     <font v-for="cat2 in item.category" :key="cat2">
                       <div v-if="cat2 != null">
