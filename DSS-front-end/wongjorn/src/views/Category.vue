@@ -1,7 +1,40 @@
 <template>
   <div class="bgcolor body">
-      <div v-if="id === '001'">
-          {{ cate = "อาหารตามสั่ง" }}
+      
+    <!--    pic cover   -->
+    <center>
+      <div style="padding-top: 30px">
+        <table>
+          <tr>
+            <td style="border-collapse: collapse;width:450px;">
+              <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
+            </td>
+            <td style="border-collapse: collapse;width:200px;position:center;">
+              <center>
+                <router-link to="/login">
+                  <img
+                    src="../assets/wongjornlogo2.png"
+                    style="width:60%;height:60%"
+                    alt=""
+                /></router-link>
+              </center>
+            </td>
+            <td style="border-collapse: collapse;width:450px">
+              <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+    <Home class="container" />
+    <center>
+    <div class="font2" style="font-size: 3vw;color:black ;">
+    <div v-if="id === '001'">
+       {{ cate = "อาหารตามสั่ง" }}
       </div>
       <div v-if="id === '002'">
           {{ cate = "ก๋วยเตี๋ยว" }}
@@ -45,37 +78,8 @@
       <div v-if="id === '015'">
           {{ cate = "เครื่องดื่ม" }}
       </div>
-    <!--    pic cover   -->
-    <center>
-      <div style="padding-top: 30px">
-        <table>
-          <tr>
-            <td style="border-collapse: collapse;width:450px;">
-              <hr
-                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
-              />
-            </td>
-            <td style="border-collapse: collapse;width:200px;position:center;">
-              <center>
-                <router-link to="/login">
-                  <img
-                    src="../assets/wongjornlogo2.png"
-                    style="width:60%;height:60%"
-                    alt=""
-                /></router-link>
-              </center>
-            </td>
-            <td style="border-collapse: collapse;width:450px">
-              <hr
-                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
-              />
-            </td>
-          </tr>
-        </table>
       </div>
-    </center>
-    <Home class="container" />
-    
+      </center>
     <table class="container">
       <tr v-for="(item, index) in resturant_name" :key="index">
         <font v-for="cat in item.category" :key="cat">
