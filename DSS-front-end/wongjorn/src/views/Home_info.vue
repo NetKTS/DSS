@@ -89,10 +89,8 @@
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center font">
                     <router-link to="/Details" style="color:white">
-                      <b-card title="Card Title 1" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;width: auto">
-                        <b-card-text>
-                          hello
-                        </b-card-text>
+                      <b-card class="font2" title="CHAYA MEAT" img-src="../assets/cok3.jpg" img-alt="Image" img-top tag="article" style="border:1px solid black;width: auto">
+                        
                       </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
                     </router-link>
@@ -219,7 +217,7 @@
           </a>
         </div>
         <div class="col-10">
-          <!--Start carousel-->
+          <!--Start carousel-->y
           <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
             <div class="carousel-inner">
@@ -229,7 +227,7 @@
 <!--                  card 1.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '001'}}">
                       <img src="https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2019/03/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AA%E0%B8%B1%E0%B8%9A-1.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -242,7 +240,7 @@
 <!--                  card 1.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '002'}}">
                       <img src="https://bottomlineis.co/uploads/images/image_750x_5d691a8d5f2f9.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -255,7 +253,7 @@
 <!--                  card 1.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '003'}}">
                       <img src="https://storage.thaipost.net/main/uploads/photos/big/20190528/image_big_5cecea82795fa.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -275,7 +273,7 @@
 <!--                  card 2.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '004'}}">
                       <img src="http://1.bp.blogspot.com/-5SQlytVoinE/VHYd1tftnZI/AAAAAAAAAJw/wIccsQKgGMc/s1600/%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%81.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -288,7 +286,7 @@
 <!--                  card 2.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '005'}}">
                       <img src="https://food.mthai.com/app/uploads/2015/06/iStock_000049519500_Small.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -301,7 +299,7 @@
 <!--                  card 2.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '006'}}">
                       <img src="http://f.ptcdn.info/658/041/000/o5cr2xgpr3N1gRNJ1LU-o.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -320,7 +318,7 @@
 <!--                  card 3.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '007'}}">
                       <img src="http://f.ptcdn.info/686/024/000/1413800215-2014101714-o.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -333,7 +331,7 @@
 <!--                  card 3.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '008'}}">
                       <img src="https://img.kapook.com/u/2015/surauch/cook2/PT1.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -346,7 +344,7 @@
 <!--                  card 3.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '009'}}">
                       <img src="https://i0.wp.com/shopee.co.th/blog/wp-content/uploads/2020/10/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%81%E0%B9%88.jpg?resize=1280%2C720&ssl=1" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -365,7 +363,7 @@
 <!--                  card 4.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '010'}}">
                       <img src="https://api.tourismthailand.org/upload/live/content_article/4-2996.png" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -378,7 +376,7 @@
 <!--                  card 4.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '011'}}">
                       <img src="https://aowtakiabseafood.com/wp-content/uploads/2019/01/seafood002.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -391,7 +389,7 @@
 <!--                  card 4.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '012'}}">
                       <img src="https://kiji.life/eats/wp-content/uploads/2018/07/FCM_0541-1024x683.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -410,7 +408,7 @@
 <!--                  card 5.1  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '013'}}">
                       <img src="http://www.smeleader.com/wp-content/uploads/2015/01/%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%8B%E0%B8%B9%E0%B8%8A%E0%B8%B4-JJ-Sushi-Foods-%E0%B9%81%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%96%E0%B8%B8%E0%B8%94%E0%B8%B4%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B8%94%E0%B9%80%E0%B8%AD-%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%9D%E0%B8%B1%E0%B8%99%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%8B%E0%B8%B9%E0%B8%8A%E0%B8%B4-2.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -423,7 +421,7 @@
 <!--                  card 5.2  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '014'}}">
                       <img src="https://s359.kapook.com/pagebuilder/6ed57640-526b-4dd4-bf60-4f9fe6b4f16b.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -436,7 +434,7 @@
 <!--                  card 5.3  -->
                   <div class="col-12 col-md d-flex align-items-center justify-content-center" >
                     <div class="container2 image">
-                      <router-link to="search">
+                      <router-link :to="{name:'Category', params: {id: '015'}}">
                       <img src="https://www.falconforprofessional.com/sites/default/files/green_tea_thumbnail_0.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
@@ -468,8 +466,14 @@
 
     <!-- <table class="container" border="1">
       <tr v-for="(item,index) in resturant_name" :key="index" >
-            <td>{{ item.name }}</td>
-            <td><router-link :to="{name:'Details', params: {payload: item}}"><button>Edit</button></router-link> </td>
+            <font v-for="cat in item.category" :key="cat">
+            <div v-if="cat.includes('อาหารไทย')">
+              {{ item.name }}
+              <font v-for="cat2 in item.category" :key="cat2">
+                  <td>{{ cat2 }}</td>
+              </font>
+            </div>
+            </font>      
         </tr>
     </table> -->
   </div>
@@ -487,8 +491,6 @@ export default {
       return {
           resturant_name:[],
           time:"",
-          category:"",
-          name:""
       }
   },
   mounted() {

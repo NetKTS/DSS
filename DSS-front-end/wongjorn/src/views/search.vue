@@ -1,33 +1,34 @@
 <template>
   <div class="bgcolor body">
     <!--    pic cover   -->
+    <center>
     <div style="padding-top: 30px">
-      <table>
-        <tr>
-          <td style="border-collapse: collapse;width:450px;">
-            <hr
+    <table>
+          <tr>
+            <td style="border-collapse: collapse;width:450px;">
+              <hr
                 style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
-            />
-          </td>
-          <td style="border-collapse: collapse;width:200px;position:center;">
-            <center>
-              <router-link to="/login">
-                <img
+              />
+            </td>
+            <td style="border-collapse: collapse;width:200px;position:center;">
+              <center>
+                <router-link to="/login">
+                  <img
                     src="../assets/wongjornlogo2.png"
                     style="width:60%;height:60%"
                     alt=""
-                />
-              </router-link>
-            </center>
-          </td>
-          <td style="border-collapse: collapse;width:450px">
-            <hr
+                /></router-link>
+              </center>
+            </td>
+            <td style="border-collapse: collapse;width:450px">
+              <hr
                 style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
-            />
-          </td>
-        </tr>
-      </table>
+              />
+            </td>
+          </tr>
+        </table>
     </div>
+    </center>
     <table class="table-responsive-md font2">
       <tr>
           <td class="w-25" style="padding-top: 40px">
