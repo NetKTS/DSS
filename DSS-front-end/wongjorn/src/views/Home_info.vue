@@ -217,7 +217,7 @@
           </a>
         </div>
         <div class="col-10">
-          <!--Start carousel-->y
+          <!--Start carousel-->
           <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
             <div class="carousel-inner">
