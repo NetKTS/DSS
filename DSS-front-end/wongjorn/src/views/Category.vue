@@ -96,7 +96,7 @@
                 <td
                   style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto"
                 >
-                <router-link :to="{name:'Details', params: {payload: item}}">
+                <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
                   <font style="font-size: 2vw;color:black ;">{{ item.name }}</font></router-link>
                   <p style="font-size: 1vw">
                     <font v-for="cat2 in item.category" :key="cat2">
@@ -145,6 +145,7 @@ export default {
         class: "m1",
       },
       resturant_name: [],
+      coordinates:{lat:0,lng:0},
       time: "",
       category: "",
       name: "",
@@ -166,6 +167,10 @@ export default {
   },
   created() {
       this.id = this.$route.params.id;
+      this.$getLocation({}).then(coordinates => {
+            this.coordinates = coordinates;
+            console.log(this.coordinates.lat,this.coordinates.lng);
+        });
   },
   methods: {
     subtime() {},
