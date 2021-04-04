@@ -11,6 +11,9 @@ import Map from '../views/map.vue'
 import Home_info from '../views/Home_info.vue'
 import Details from '../views/Details.vue'
 import Search from '../views/search.vue'
+import Category from '../views/Category.vue'
+import page from '../views/page.vue'
+import page2 from '../views/page2.vue'
 
 Vue.use(VueRouter)
 
@@ -69,6 +72,21 @@ const routes = [
     path: '/Search',
     name: 'Search',
     component: Search
+  },
+  {
+    path: '/Category/:id',
+    name: 'Category',
+    component: Category
+  },
+  {
+    path: '/page',
+    name: 'page',
+    component: page
+  },
+  {
+    path: '/page2/:id',
+    name: 'page2',
+    component: page2
   }
 
 ]
