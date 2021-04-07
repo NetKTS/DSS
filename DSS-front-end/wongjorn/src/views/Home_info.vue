@@ -93,7 +93,7 @@
                         {{resturant_name[0].name}}
                       </b-card>
 <!--                    <img src="../assets/wongjornlogo2.png">-->
-                    </router-link>
+                    </router-link>cd ..
                   </div>
                   
 <!--                  card 1.2  -->

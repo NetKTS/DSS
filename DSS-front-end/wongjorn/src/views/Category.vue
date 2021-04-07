@@ -97,12 +97,14 @@
                   style="padding-left: 50px;padding-top: 0px;width: 100%;height: auto"
                 >
                   <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
-                    <font style="font-size: 2vw;color:black ;">{{ item.name }}</font>
+                    <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
+                    <font>ระยะทาง {{ finddistance(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long)}} กิโลเมตร</font>
                   </router-link>
                   <p style="font-size: 1vw">
                     <font v-for="cat2 in item.category" :key="cat2">
                       <div v-if="cat2 != null">
                         <td>{{ cat2 }}</td>
+                        
                       </div>
                     </font>
                   </p>
@@ -132,6 +134,8 @@
 <script>
 import axios from "axios";
 import Home from "../components/layout/Home";
+
+
 export default {
   components: { Home },
   name: "Mydata",
@@ -150,6 +154,11 @@ export default {
       category: "",
       name: "",
       getitem: {},
+      myvara:0.0,
+      myvarc:0.0,
+      myvard:0.0,
+      rlat:0.0,
+      rlong:0.0
     };
   },
   mounted() {
@@ -173,7 +182,19 @@ export default {
         });
   },
   methods: {
-    subtime() {},
+    finddistance(lat1,long1,lat2,long2) {
+      lat1 = lat1*Math.PI/180
+      lat2 = lat2*Math.PI/180
+      long1 = long1*Math.PI/180
+      long2 = long2*Math.PI/180
+      // this.myvara = Math.pow(Math.sin((lat-this.coordinates.lat)/2),2)+ Math.cos(this.coordinates.lat)*Math.cos(lat)*Math.pow(Math.sin((long-this.coordinates.lng)/2),2)
+      // this.myvarc = 2 * Math.atan2( Math.sqrt(this.myvara), Math.sqrt(1-this.myvara))
+      // this.myvard = (6373 * this.myvarc)
+      
+      
+      return parseFloat(Math.acos(Math.sin(lat1)*Math.sin(lat2)+Math.cos(lat1)*Math.cos(lat2)*Math.cos(long1 - long2)) * 6371).toFixed(1);
+    },
+    
   },
 };
 </script>
