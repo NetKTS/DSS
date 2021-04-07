@@ -230,6 +230,7 @@
                       <img src="https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2019/03/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AA%E0%B8%B1%E0%B8%9A-1.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
+                          
                           <b-button variant="light" style="width:auto">อาหารตามสั่ง</b-button> 
                           </div>
                       </div>
@@ -273,7 +274,7 @@
                   <div class="col-12 col-md d-flex align-items-center justify-content-center">
                     <div class="container2 image">
                       <router-link :to="{name:'Category', params: {id: '004'}}">
-                      <img src="../assets/steak.jpg" alt="" style="border-radius:10px;border:1px solid black">
+                      <img src="http://1.bp.blogspot.com/-5SQlytVoinE/VHYd1tftnZI/AAAAAAAAAJw/wIccsQKgGMc/s1600/%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%81.jpg" alt="" style="border-radius:10px;border:1px solid black">
                       <div class="overlay">
                         <div class="middle font2" style="color:white">
                           <b-button variant="light" style="width:auto">สเต๊ก</b-button> 

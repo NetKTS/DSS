@@ -119,13 +119,12 @@
           </div>
         </font>
       </tr>
-    </table>
-
-    <center>
+      <center>
       <router-link to="/Home_info">
         <b-button variant="warning" class="font2 btn-md">หน้าแรก</b-button>
       </router-link>
     </center>
+    </table>
     <br />
   </div>
 </template>
