@@ -9,7 +9,7 @@
       <tr>
         
         <td style="width:250px;" class="center" >
-          <img src="../assets/cok3.jpg" style="border-radius: 15px 15px 15px 15px;" >
+          <img :src="getitem.img" style="border-radius: 15px 15px 15px 15px;border:1px solid black" >
           <br><br>
           <center>
           <h3 class="font2">แผนที่</h3>

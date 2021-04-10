@@ -87,10 +87,16 @@
             <table class="table-responsive-md font2">
               <tr>
                 <td class="w-25" style="padding-top: 0px">
-                  <img
+                  <!-- <img
                     src="../assets/cok3.jpg"
                     class="rounded-circle img-fluid"
                     alt=""
+                  /> -->
+                  <img
+                    :src="item.img"
+                    class="rounded-circle img-fluid"
+                    alt=""
+                    style="width: 100%;height: 200px"
                   />
                 </td>
                 <td
