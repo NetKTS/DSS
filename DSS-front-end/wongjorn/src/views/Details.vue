@@ -149,7 +149,7 @@
     <br />
     <div>
       <center>
-        <router-link to="/form">
+        <router-link :to="{name:'Category', params: {category: category,id:id}}">
           <button
             class="btn btn-secondary font"
             style="width:100px"
@@ -184,12 +184,16 @@ export default {
       resturant_name: [],
       getitem: {},
       mylocation: { lng: 0, lat: 0 },
+      category:"",
     };
   },
   created() {
     this.mylocation = this.$route.params.mylocation;
     console.log(this.mylocation);
     this.getitem = this.$route.params.payload;
+    this.id = this.$route.params.id;
+    this.category = this.$route.params.category;
+    console.log(this.id);
     if (this.getitem == null) {
       console.log("get item Error");
       window.location = "#/Home_info";

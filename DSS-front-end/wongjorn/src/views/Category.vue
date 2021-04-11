@@ -121,7 +121,7 @@
                 <td
                   style="padding-left: 50px;padding-top: 0px;width: 100%;height: auto"
                 >
-                  <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
+                  <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates,category:categ,id:id}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
                     <font>ระยะทาง {{ dis[index]/1000}} กิโลเมตร</font>
                     <!-- <br><font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
@@ -207,7 +207,6 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-    
   },
   beforeMount() {
     console.log("before");
@@ -220,7 +219,10 @@ export default {
             this.coordinates = coordinates;
             console.log(this.coordinates.lat,this.coordinates.lng);
         });
-        
+        if (this.categ == null) {
+      console.log("get item Error");
+      window.location = "#/Home_info";
+    }
   },
   methods: {
     finddistance(lat1,long1,lat2,long2) {
