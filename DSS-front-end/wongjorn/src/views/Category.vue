@@ -33,6 +33,7 @@
     <Home class="container" />
     <center>
     <div class="font2" style="font-size: 3vw;color:black ;">
+      
     <div v-if="id === '001'">
        {{ cate = "อาหารตามสั่ง" }}
       </div>
@@ -82,6 +83,7 @@
       </center>
     <table class="container">
       <tr v-for="(item, index) in resturant_name" :key="index">
+        <!-- <font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
         <font v-for="cat in item.category" :key="cat">
           <div v-if="cat.includes(cate)">
             <table class="table-responsive-md font2">
@@ -104,7 +106,8 @@
                 >
                   <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
-                    <font>ระยะทาง {{ finddistance(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long)}} กิโลเมตร</font>
+                    <font>ระยะทาง {{ dis[index]/1000}} กิโลเมตร</font>
+                    <!-- <br><font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
                   </router-link>
                   <p style="font-size: 1vw">
                     <font v-for="cat2 in item.category" :key="cat2">
@@ -158,34 +161,49 @@ export default {
       coordinates:{lat:0,lng:0},
       time: "",
       category: "",
+      categ:"",
       name: "",
       getitem: {},
       myvara:0.0,
       myvarc:0.0,
       myvard:0.0,
       rlat:0.0,
-      rlong:0.0
+      rlong:0.0,
+      dis:[],
+      i:0,
     };
   },
   mounted() {
     axios
-      .get("http://www.localhost:2002/api/getData/")
+      .get("http://www.localhost:2002/api/getcategory/"+this.categ)
       .then((response) => {
         console.log("", response.data.data);
         this.resturant_name = response.data.data;
         console.log(this.resturant_name);
+        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+           
+      // console.log("Hi = "+this.i);
+      this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+    }
+    console.log(this.dis);
       })
       .catch((error) => {
         console.log(error);
       });
-    //console.log(this.resturant_name)
+    
+  },
+  beforeMount() {
+    console.log("before");
+    console.log(this.resturant_name);
   },
   created() {
       this.id = this.$route.params.id;
+      this.categ = this.$route.params.category
       this.$getLocation({}).then(coordinates => {
             this.coordinates = coordinates;
             console.log(this.coordinates.lat,this.coordinates.lng);
         });
+        
   },
   methods: {
     finddistance(lat1,long1,lat2,long2) {
@@ -200,7 +218,15 @@ export default {
       
       return parseFloat(Math.acos(Math.sin(lat1)*Math.sin(lat2)+Math.cos(lat1)*Math.cos(lat2)*Math.cos(long1 - long2)) * 6371).toFixed(1);
     },
-    
+     finddistance2(lat1,long1,lat2,long2,index){
+       axios
+      .get("https://api.longdo.com/RouteService/json/route/guide?flon="+long1+"&flat="+lat1+"&tlon="+long2+"&tlat="+lat2+"&mode=t&type=25&locale=th&key=68cd5510a9da9701e87d7ca5cbc8eaef")
+      .then((response) => {
+        // console.log(response.data.data[0].distance)
+        this.dis[index] = response.data.data[0].distance
+      })
+      
+    }
   },
 };
 </script>
