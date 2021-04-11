@@ -34,7 +34,8 @@
       <tr>
         <td>
           <router-link to="/Home_info">
-            <b-button variant="warning" class="font2 btn-md">หน้าแรก</b-button>
+            <!-- <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button> -->
+            <img src="https://www.pngarts.com/files/2/Back-PNG-Image-Background.png" style="width:10%;height:50px">
           </router-link>
         </td>
       </tr>
@@ -44,18 +45,24 @@
           
         </td>
       </tr>
-
-
-     
-
-      
-    </table>
-
-
-
+    </table>  
     <table class="container">
+      <div v-if="search === ''">
+        <center>
+        <div class="font2" style="font-size: 3vw;color:black ;">
+          ไม่พบร้านอาหารที่คุณต้องการ
+        </div>
+        </center>
+      </div>
+      <div v-else-if="resturant_name.length === 0">
+        <center>
+        <div class="font2" style="font-size: 3vw;color:black ;">
+          ไม่พบร้านอาหารที่คุณต้องการ
+        </div>
+        </center>
+      </div>
+      <div v-else>
       <tr v-for="(item, index) in resturant_name" :key="index">
-        
           <div>
             <table class="table-responsive-md font2">
               <tr>
@@ -96,19 +103,17 @@
                   />
                 </td>
               </tr>
+              
             </table>
           </div>
-        
       </tr>
       <center>
       <router-link to="/Home_info">
-        <b-button variant="warning" class="font2 btn-md">หน้าแรก</b-button>
-      </router-link>
+            <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button>
+          </router-link>
     </center>
+      </div>
     </table>
-    <center>
-
-    </center>
   </div>
 
 </template>
@@ -149,12 +154,12 @@ export default {
         console.log("Search Page");
         console.log(response.data.data);
         this.resturant_name = response.data.data
-        // console.log(this.resturant_name);
+        //console.log(this.resturant_name);
       })
       .catch((error) => {
         console.log(error);
       });
-      //console.log(this.resturant_name)
+      console.log(this.resturant_name)
     axios
       .get("https://mmmap15.longdo.com/mmroute/json/route/matrix?flon[0]=100.534&flat[0]=13.745&tlon[0]=100.601&tlat[0]=13.919&key=68cd5510a9da9701e87d7ca5cbc8eaef")
       .then((response) => {

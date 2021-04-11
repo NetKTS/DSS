@@ -34,8 +34,8 @@
     <table>
       <tr>
         <td class="w-25 container-fluid">
-          <div class="container-fluid" style="margin-left:-30px">
-            <b-form-input v-model="search" placeholder="Enter name" ></b-form-input>
+          <div class="container-fluid" style="margin-left:-30px">    
+          <b-form-input required v-model="search" placeholder="Enter name" requireds></b-form-input> 
 <!--            <div class="mt-2">Value: {{ text }}</div>-->
           </div>
         </td>
@@ -81,7 +81,6 @@
         <div class="col-10" >
           <!--Start carousel-->
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
             <div class="carousel-inner">
 <!--              slide 1   -->
               <div class="carousel-item active" >
@@ -116,6 +115,9 @@
                   </div>
                 </div>
               </div>
+
+
+              
 <!--              slide 2 -->
               <div class="carousel-item">
                 <div class="row">
@@ -484,6 +486,7 @@
 <script>
 import axios from "axios";
 import Home from "../components/layout/Home";
+
 export default {
   components: { Home },
   name: "MyData",
@@ -493,6 +496,7 @@ export default {
           coordinates:{},
           time:"",
           search:"",
+          errors: false
       }
   },
   created() {
@@ -519,8 +523,12 @@ export default {
     subtime(){
       
     },
+    invalidateForm() {
+      this.errors = true;
+    }
     
   },
+  
 };
 
 </script>

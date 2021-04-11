@@ -14,6 +14,7 @@ import Search from '../views/search.vue'
 import Category from '../views/Category.vue'
 import page from '../views/page.vue'
 import page2 from '../views/page2.vue'
+import validation from '../views/validation.vue'
 
 Vue.use(VueRouter)
 
@@ -87,6 +88,11 @@ const routes = [
     path: '/page2/:id',
     name: 'page2',
     component: page2
+  },
+  {
+    path: '/validation',
+    name: 'validation',
+    component: validation
   }
 
 ]
