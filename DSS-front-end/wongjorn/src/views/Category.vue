@@ -36,7 +36,7 @@
         <td>
           <router-link to="/Home_info">
             <!-- <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button> -->
-            <img src="https://www.pngarts.com/files/2/Back-PNG-Image-Background.png" style="width:10%;height:50px">
+            <img src="https://pics.freeicons.io/uploads/icons/png/9541818211553167201-512.png" style="width:20%;height:100px">
           </router-link>
         </td>
       </tr>
@@ -101,8 +101,8 @@
     <table class="container">
       <tr v-for="(item, index) in resturant_name" :key="index">
         <!-- <font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
-        <font v-for="cat in item.category" :key="cat">
-          <div v-if="cat.includes(cate)">
+        <!-- <font v-for="cat in item.category" :key="cat"> -->
+          <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
               <tr>
                 <td class="w-25" style="padding-top: 0px">
@@ -123,14 +123,13 @@
                 >
                   <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates,category:categ,id:id}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
-                    <font>ระยะทาง {{ dis[index]/1000}} กิโลเมตร</font>
+                    <font>ระยะทาง {{ dis[index]/1000 }} กิโลเมตร</font>
                     <!-- <br><font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
                   </router-link>
                   <p style="font-size: 1vw">
                     <font v-for="cat2 in item.category" :key="cat2">
                       <div v-if="cat2 != null">
                         <td>{{ cat2 }}</td>
-                        
                       </div>
                     </font>
                   </p>
@@ -144,8 +143,8 @@
                 </td>
               </tr>
             </table>
-          </div>
-        </font>
+          <!-- </div> -->
+        <!-- </font> -->
       </tr>
     </table>
     <center>

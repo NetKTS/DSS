@@ -35,7 +35,7 @@
         <td>
           <router-link to="/Home_info">
             <!-- <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button> -->
-            <img src="https://www.pngarts.com/files/2/Back-PNG-Image-Background.png" style="width:10%;height:50px">
+            <img src="https://pics.freeicons.io/uploads/icons/png/9541818211553167201-512.png" style="width:20%;height:100px">
           </router-link>
         </td>
       </tr>
@@ -47,23 +47,20 @@
       </tr>
     </table>  
     <table class="container">
-      <div v-if="search === ''">
+      <div v-if="resturant_name.length === 0">
         <center>
         <div class="font2" style="font-size: 3vw;color:black ;">
-          ไม่พบร้านอาหารที่คุณต้องการ
+          Loading . . .
         </div>
-        </center>
-      </div>
-      <div v-else-if="resturant_name.length === 0">
-        <center>
-        <div class="font2" style="font-size: 3vw;color:black ;">
-          ไม่พบร้านอาหารที่คุณต้องการ
-        </div>
+       <br>
+        <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
         </center>
       </div>
       <div v-else>
+        <table class="container">
       <tr v-for="(item, index) in resturant_name" :key="index">
-          <div>
             <table class="table-responsive-md font2">
               <tr>
                 <td class="w-25" style="padding-top: 0px">
@@ -71,6 +68,7 @@
                     src="../assets/cok3.jpg"
                     class="rounded-circle img-fluid"
                     alt=""
+                    style="width: 100%;height: 200px"
                   /> -->
                   <img
                     :src="item.img"
@@ -105,8 +103,8 @@
               </tr>
               
             </table>
-          </div>
       </tr>
+      </table>
       <center>
       <router-link to="/Home_info">
             <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button>
@@ -114,6 +112,7 @@
     </center>
       </div>
     </table>
+    <br>
   </div>
 
 </template>
