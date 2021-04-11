@@ -30,6 +30,23 @@
         </table>
       </div>
     </center>
+    <go-top style="background-color: black"></go-top>
+    <table class="table-responsive-md font2">
+      <tr>
+        <td>
+          <router-link to="/Home_info">
+            <!-- <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button> -->
+            <img src="https://www.pngarts.com/files/2/Back-PNG-Image-Background.png" style="width:10%;height:50px">
+          </router-link>
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="border-collapse: collapse;width:450px;">
+          
+        </td>
+      </tr>
+    </table>
     <Home class="container" />
     <center>
     <div class="font2" style="font-size: 3vw;color:black ;">
@@ -130,12 +147,12 @@
           </div>
         </font>
       </tr>
-      <center>
-      <router-link to="/Home_info">
-        <b-button variant="warning" class="font2 btn-md">หน้าแรก</b-button>
-      </router-link>
-    </center>
     </table>
+    <center>
+      <router-link to="/Home_info">
+            <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button>
+          </router-link>
+    </center>
     <br />
   </div>
 </template>
@@ -143,10 +160,10 @@
 <script>
 import axios from "axios";
 import Home from "../components/layout/Home";
-
+import GoTop from '@inotom/vue-go-top';
 
 export default {
-  components: { Home },
+  components: { Home , GoTop },
   name: "Mydata",
   data() {
     return {
@@ -254,6 +271,25 @@ export default {
   100% {
     opacity: 1;
   }
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }
 img {
   width: 100%;
