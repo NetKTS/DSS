@@ -38,99 +38,73 @@
           </router-link>
         </td>
       </tr>
-      <tr>
-          <td class="w-25" style="padding-top: 40px">
-
-              <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">
-
-          </td>
-          <td style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto">
-            <h1 style="font-size: 3vw">ร้านหมู</h1>
-            <p style="font-size: 2vw">ส้มตำ</p>
-          </td>
-
-      </tr>
+      
       <tr>
         <td colspan="2" style="border-collapse: collapse;width:450px;">
-          <hr
-              style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
-          />
+          
         </td>
       </tr>
 
-      <tr>
-        <td class="w-25" style="padding-top: 40px;">
 
-          <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">
+     
 
-        </td>
-        <td style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto">
-          <h1 style="font-size: 3vw">hello</h1>
-          <p style="font-size: 2vw">world</p>
-        </td>
+      
+    </table>
 
+
+
+    <table class="container">
+      <tr v-for="(item, index) in resturant_name" :key="index">
+        
+          <div>
+            <table class="table-responsive-md font2">
+              <tr>
+                <td class="w-25" style="padding-top: 0px">
+                  <!-- <img
+                    src="../assets/cok3.jpg"
+                    class="rounded-circle img-fluid"
+                    alt=""
+                  /> -->
+                  <img
+                    :src="item.img"
+                    class="rounded-circle img-fluid"
+                    alt=""
+                    style="width: 100%;height: 200px"
+                  />
+                </td>
+                <td
+                  style="padding-left: 50px;padding-top: 0px;width: 100%;height: auto"
+                >
+                  <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
+                    <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
+                    <font>ระยะทาง {{ finddistance(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long)}} กิโลเมตร</font>
+                  </router-link>
+                  <p style="font-size: 1vw">
+                    <font v-for="cat2 in item.category" :key="cat2">
+                      <div v-if="cat2 != null">
+                        <td>{{ cat2 }}</td>
+                        
+                      </div>
+                    </font>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="border-collapse: collapse;width:450px;">
+                  <hr
+                    style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+        
       </tr>
-
-      <tr>
-        <td colspan="2" style="border-collapse: collapse;width:450px;">
-          <hr
-              style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
-          />
-        </td>
-      </tr>
-
-      <tr>
-        <td class="w-25" style="padding-top: 40px;">
-
-          <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">
-
-        </td>
-        <td style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto">
-          <h1 style="font-size: 3vw">hello</h1>
-          <p style="font-size: 2vw">world</p>
-        </td>
-
-      </tr>
-      <tr>
-        <td colspan="2" style="border-collapse: collapse;width:450px;">
-          <hr
-              style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
-          />
-        </td>
-      </tr>
-
-      <tr>
-        <td class="w-25" style="padding-top: 40px;">
-
-          <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">
-
-        </td>
-        <td style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto">
-          <h1 style="font-size: 3vw">hello</h1>
-          <p style="font-size: 2vw">world</p>
-        </td>
-
-      </tr>
-      <tr>
-        <td colspan="2" style="border-collapse: collapse;width:450px;">
-          <hr
-              style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
-          />
-        </td>
-      </tr>
-
-      <tr>
-        <td class="w-25" style="padding-top: 40px;">
-
-          <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">
-
-        </td>
-        <td style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto">
-          <h1 style="font-size: 3vw">hello</h1>
-          <p style="font-size: 2vw">world</p>
-        </td>
-
-      </tr>
+      <center>
+      <router-link to="/Home_info">
+        <b-button variant="warning" class="font2 btn-md">หน้าแรก</b-button>
+      </router-link>
+    </center>
     </table>
     <center>
 
@@ -142,18 +116,68 @@
 
 <script>
 // @ is an alias to /src
+import axios from "axios";
 import GoTop from '@inotom/vue-go-top';
 export default {
   // name: 'Home',
+
+  created() {
+    this.search = this.$route.params.payload
+    console.log(this.search);
+    this.$getLocation({}).then(coordinates => {
+            this.coordinates = coordinates;
+            console.log(this.coordinates.lat,this.coordinates.lng);
+        });
+  },
   components: {
     GoTop
   },
 
   data() {
     return {
-      mainProps: { blank: true, blankColor: '#777', width: 50, height: 50, class: 'm1' }
+      mainProps: { blank: true, blankColor: '#777', width: 50, height: 50, class: 'm1' },
+      search:"",
+      resturant_name:[],
+      distance:0,
+      coordinates:{},
     }
-  }
+  },
+  mounted() {
+    axios
+      .get("http://www.localhost:2002/api/getid/"+this.search)
+      .then((response) => {
+        console.log("Search Page");
+        console.log(response.data.data);
+        this.resturant_name = response.data.data
+        // console.log(this.resturant_name);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      //console.log(this.resturant_name)
+    axios
+      .get("https://mmmap15.longdo.com/mmroute/json/route/matrix?flon[0]=100.534&flat[0]=13.745&tlon[0]=100.601&tlat[0]=13.919&key=68cd5510a9da9701e87d7ca5cbc8eaef")
+      .then((response) => {
+        // console.log(response.data.data)
+        this.distance = response.data.data
+        // console.log(this.distance[0].[0].distance)   ใช้ได้
+      })   
+  },
+  methods: {
+    finddistance(lat1,long1,lat2,long2) {
+      lat1 = lat1*Math.PI/180
+      lat2 = lat2*Math.PI/180
+      long1 = long1*Math.PI/180
+      long2 = long2*Math.PI/180
+      // this.myvara = Math.pow(Math.sin((lat-this.coordinates.lat)/2),2)+ Math.cos(this.coordinates.lat)*Math.cos(lat)*Math.pow(Math.sin((long-this.coordinates.lng)/2),2)
+      // this.myvarc = 2 * Math.atan2( Math.sqrt(this.myvara), Math.sqrt(1-this.myvara))
+      // this.myvard = (6373 * this.myvarc)
+      
+      
+      return parseFloat(Math.acos(Math.sin(lat1)*Math.sin(lat2)+Math.cos(lat1)*Math.cos(lat2)*Math.cos(long1 - long2)) * 6371).toFixed(1);
+    },
+    
+  },
 }
 
 </script>

@@ -35,12 +35,12 @@
       <tr>
         <td class="w-25 container-fluid">
           <div class="container-fluid" style="margin-left:-30px">
-            <b-form-input v-model="text" placeholder="Enter name or category"></b-form-input>
+            <b-form-input v-model="search" placeholder="Enter name" ></b-form-input>
 <!--            <div class="mt-2">Value: {{ text }}</div>-->
           </div>
         </td>
         <td>
-          <router-link to="/search">
+          <router-link :to="{name:'Search', params:{payload: search}}">
           <b-button variant="warning" class="font2 btn-sm" style="margin-left:-50px">search</b-button>
         </router-link>
         </td>
@@ -492,6 +492,7 @@ export default {
           resturant_name:[],
           coordinates:{},
           time:"",
+          search:"",
       }
   },
   created() {
