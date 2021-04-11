@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get('/getData/',getallData)
 router.get('/getrandomdata/',getRandomData)
-router.get('/getData/:ID',query)
+router.get('/getid/:ID',query)
 router.post('/create/Namelist', createNamelist)
 module.exports = router;

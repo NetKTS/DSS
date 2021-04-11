@@ -88,12 +88,23 @@ exports.findById = (id) => {
     }))
 }
 exports.query = (req, res) => {
-    const { payload } = req.body;
-    Namelist.find({ name: payload.name }).exec((error, data) => {
+    // const { payload } = req.params.ID;
+    // Namelist.find({ name: req.params.ID }).exec((error, data) => {
+    //   if (error) return res.status(400).json({ error });
+    //   if (data) {
+    //     return res.status(200).json({ data });
+    //   }
+    // });
+
+    const { payload } = req.params.ID;
+    Namelist.find({ 'name':{'$regex' : req.params.ID,'$options':'i'}}).exec((error, data) => {
       if (error) return res.status(400).json({ error });
       if (data) {
         return res.status(200).json({ data });
       }
     });
+
+
+
   };
   
