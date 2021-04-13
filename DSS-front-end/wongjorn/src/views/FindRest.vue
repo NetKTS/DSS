@@ -47,7 +47,7 @@
       </tr>
     </table>
     <Home class="container" />
-    <div v-if="loading ==true ">
+    <div v-if="loading ==true && true == false">
         <center>
         <div class="font2" style="font-size: 3vw;color:black ;">
           Loading . . .
@@ -87,9 +87,7 @@
         <!-- <font v-for="cat in item.category" :key="cat"> -->
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
-                <tr v-if="resturant_name.length<1">
-                    <td> Loading . . .</td>
-                </tr>
+                
               <tr v-if="dis[index]>0&& index < K">
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
@@ -305,6 +303,10 @@ export default {
             console.log("Sorted");
             this.loading = false;
             console.log(this.dis);
+            if(this.dis.length == 0){
+                console.log("NO DATA");
+                window.location = "#/NoData";
+            }
         }
     },
 }

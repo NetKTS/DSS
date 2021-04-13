@@ -47,10 +47,11 @@
       </tr>
     </table>  
     <table class="container">
-      <div v-if="resturant_name.length === 0">
+      <div v-if="resturant_name.length===0"></div>
+      <div v-if="loading ==true&&resturant_name.length === 0">
         <center>
         <div class="font2" style="font-size: 3vw;color:black ;">
-          Loading . . .
+          Loading. . .
         </div>
        <br>
         <hr
@@ -58,6 +59,7 @@
               />
         </center>
       </div>
+      
       <div v-else>
         <table class="container">
       <tr v-for="(item, index) in resturant_name" :key="index">
@@ -82,7 +84,7 @@
                 >
                   <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
-                    <font>ระยะทาง {{ finddistance(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long)}} กิโลเมตร</font>
+                    <font>ระยะทาง {{ dis[index]/1000 }} กิโลเมตร</font>
                   </router-link>
                   <p style="font-size: 1vw">
                     <font v-for="cat2 in item.category" :key="cat2">
@@ -127,11 +129,31 @@ export default {
 
   created() {
     this.search = this.$route.params.payload
+    if(this.search==""){
+      window.location = "#/Home_info";
+    }
     console.log(this.search);
     this.$getLocation({}).then(coordinates => {
             this.coordinates = coordinates;
             console.log(this.coordinates.lat,this.coordinates.lng);
         });
+        
+        axios
+      .get("http://www.localhost:2002/api/getid/"+this.search)
+      .then((response) => {
+        console.log("Search Page");
+        console.log(response.data.data);
+        this.resturant_name = response.data.data
+        //console.log(this.resturant_name);
+        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+           
+      // console.log("Hi = "+this.i);
+      this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+    }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   components: {
     GoTop
@@ -144,6 +166,8 @@ export default {
       resturant_name:[],
       distance:0,
       coordinates:{},
+      loading:true,
+      dis:[],
     }
   },
   mounted() {
@@ -154,6 +178,16 @@ export default {
         console.log(response.data.data);
         this.resturant_name = response.data.data
         //console.log(this.resturant_name);
+        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+           
+      // console.log("Hi = "+this.i);
+      this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+      
+    }
+    if(this.dis.length == 0){
+                console.log("NO DATA");
+                window.location = "#/NoData";
+            }
       })
       .catch((error) => {
         console.log(error);
@@ -166,6 +200,7 @@ export default {
         this.distance = response.data.data
         // console.log(this.distance[0].[0].distance)   ใช้ได้
       })   
+      
   },
   methods: {
     finddistance(lat1,long1,lat2,long2) {
@@ -180,7 +215,16 @@ export default {
       
       return parseFloat(Math.acos(Math.sin(lat1)*Math.sin(lat2)+Math.cos(lat1)*Math.cos(lat2)*Math.cos(long1 - long2)) * 6371).toFixed(1);
     },
-    
+     finddistance2(lat1,long1,lat2,long2,index){
+       axios
+      .get("https://api.longdo.com/RouteService/json/route/guide?flon="+long1+"&flat="+lat1+"&tlon="+long2+"&tlat="+lat2+"&mode=t&type=25&locale=th&key=68cd5510a9da9701e87d7ca5cbc8eaef")
+      .then((response) => {
+        // console.log(response.data.data[0].distance)
+        this.dis[index] = parseFloat(response.data.data[0].distance).toFixed(1)
+      })
+      this.loading = false;
+      
+    }
   },
 }
 

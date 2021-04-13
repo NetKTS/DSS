@@ -504,6 +504,9 @@ export default {
             this.coordinates = coordinates;
             console.log(this.coordinates.lat,this.coordinates.lng);
         });
+        if(this.coordinates < 0){
+            window.location = "#/Home_info";
+        }
   },
   mounted() {
     axios

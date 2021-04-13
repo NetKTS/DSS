@@ -16,6 +16,7 @@ import page from '../views/page.vue'
 import page2 from '../views/page2.vue'
 import validation from '../views/validation.vue'
 import FindRest from '../views/FindRest.vue'
+import NoData from '../views/Nodata.vue'
 
 Vue.use(VueRouter)
 
@@ -99,9 +100,12 @@ const routes = [
     path: '/FindRest',
     name: 'FindRest',
     component: FindRest
+  },
+  {
+  path: '/NoData',
+  name: 'Nodata',
+  component: NoData
   }
-  
-
 ]
 
 const router = new VueRouter({
