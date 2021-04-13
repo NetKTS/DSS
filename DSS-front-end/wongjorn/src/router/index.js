@@ -15,6 +15,7 @@ import Category from '../views/Category.vue'
 import page from '../views/page.vue'
 import page2 from '../views/page2.vue'
 import validation from '../views/validation.vue'
+import FindRest from '../views/FindRest.vue'
 
 Vue.use(VueRouter)
 
@@ -93,7 +94,13 @@ const routes = [
     path: '/validation',
     name: 'validation',
     component: validation
+  },
+  {
+    path: '/FindRest',
+    name: 'FindRest',
+    component: FindRest
   }
+  
 
 ]
 

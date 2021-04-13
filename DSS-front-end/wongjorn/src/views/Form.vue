@@ -78,7 +78,7 @@
                     id="radio1"
                     name="radio-stacked"
                     required
-                    value="1"
+                    value="อาหารตามสั่ง"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio1">
@@ -94,7 +94,7 @@
                     id="radio2"
                     name="radio-stacked"
                     required
-                    value="2"
+                    value="บุฟเฟ่ต์"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio2">
@@ -110,7 +110,7 @@
                     id="radio3"
                     name="radio-stacked"
                     required
-                    value="3"
+                    value="สเต๊ก"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio3">
@@ -126,7 +126,7 @@
                     id="radio4"
                     name="radio-stacked"
                     required
-                    value="4"
+                    value="ก๋วยเตี๋ยว"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio4">
@@ -146,7 +146,7 @@
                     id="radio5"
                     name="radio-stacked"
                     required
-                    value="5"
+                    value="อาหารอีสาน"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio5">
@@ -162,7 +162,7 @@
                     id="radio6"
                     name="radio-stacked"
                     required
-                    value="6"
+                    value="เครื่องดื่ม"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio6">
@@ -178,7 +178,7 @@
                     id="radio7"
                     name="radio-stacked"
                     required
-                    value="7"
+                    value="ของหวาน"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio7">
@@ -194,7 +194,7 @@
                     id="radio8"
                     name="radio-stacked"
                     required
-                    value="8"
+                    value="อาหารต่างประเทศ"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio8">
@@ -214,7 +214,7 @@
                     id="radio9"
                     name="radio-stacked"
                     required
-                    value="9"
+                    value="ปิ้งย่าง"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio9">
@@ -230,7 +230,7 @@
                     id="radio10"
                     name="radio-stacked"
                     required
-                    value="10"
+                    value="ฟาสต์ฟู้ด"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio10">
@@ -246,7 +246,7 @@
                     id="radio11"
                     name="radio-stacked"
                     required
-                    value="11"
+                    value="อาหารใต้"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio11">
@@ -262,7 +262,7 @@
                     id="radio12"
                     name="radio-stacked"
                     required
-                    value="12"
+                    value="อาหารไทย"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio12">
@@ -282,7 +282,7 @@
                     id="radio13"
                     name="radio-stacked"
                     required
-                    value="13"
+                    value="ชาบู"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio13">
@@ -298,7 +298,7 @@
                     id="radio14"
                     name="radio-stacked"
                     required
-                    value="14"
+                    value="อาหารทะเล"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio14">
@@ -314,7 +314,7 @@
                     id="radio15"
                     name="radio-stacked"
                     required
-                    value="15"
+                    value="อาหารจานเดียว"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio15">
@@ -351,7 +351,7 @@
                     id="radioprice1"
                     name="pricerate"
                     required
-                    value="1"
+                    value="0 - 100 บาท"
                     v-model.number="applicant.pricerate"
                   />
                   <label class="custom-control-label" for="radioprice1">
@@ -367,7 +367,7 @@
                     id="radioprice2"
                     name="pricerate"
                     required
-                    value="2"
+                    value="101 - 250 บาท"
                     v-model.number="applicant.pricerate"
                   />
                   <label class="custom-control-label" for="radioprice2">
@@ -383,7 +383,7 @@
                     id="radioprice3"
                     name="pricerate"
                     required
-                    value="3"
+                    value="251 - 500 บาท"
                     v-model.number="applicant.pricerate"
                   />
                   <label class="custom-control-label" for="radioprice3">
@@ -399,7 +399,7 @@
                     id="radioprice4"
                     name="pricerate"
                     required
-                    value="4"
+                    value="500 บาทขึ้นไป"
                     v-model.number="applicant.pricerate"
                   />
                   <label class="custom-control-label" for="radioprice4">
@@ -422,6 +422,8 @@
           >
             Clear
           </button>
+          
+          <router-link :to="{name:'FindRest', params: {category: applicant.category,pricerate:applicant.pricerate,day:applicant.date,time:applicant.time}}">
           <button
             class="btn btn-primary pad font"
             style="width:100px"
@@ -430,6 +432,7 @@
           >
             Submit
           </button>
+          </router-link>
         </center>
       </div>
     </form>
@@ -448,6 +451,7 @@ export default {
         category: "",
         pricerate: "",
         date: new Date().getDay(),
+        time: new Date().getHours(),
         //service: "",
       },
       timestamp: "",
@@ -455,7 +459,10 @@ export default {
   },
   methods: {
     submit() {
+
+      // window.location = "#/FindRest";
       alert(JSON.stringify(this.applicant));
+
     },
     clear() {
       this.applicant = {};

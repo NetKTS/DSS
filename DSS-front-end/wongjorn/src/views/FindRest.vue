@@ -47,17 +47,15 @@
       </tr>
     </table>
     <Home class="container" />
-    <center>
-    <div class="font2" style="font-size: 3vw;color:black ;">
-      </div>
-      </center>
+    
     <table class="container">
+        
       <tr v-for="(item, index) in resturant_name" :key="index">
         <!-- <font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
         <!-- <font v-for="cat in item.category" :key="cat"> -->
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
-              <tr>
+              <tr v-if="dis[index]>0">
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
                     src="../assets/cok3.jpg"
@@ -76,7 +74,7 @@
                 >
                   <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates,category:categ,id:id}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
-                    <font>ระยะทาง {{  dis[index]/1000 }} กิโลเมตร</font>
+                    <font>ระยะทาง {{ (dis[index]/1000) }} กิโลเมตร</font>
                     <!-- <br><font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
                   </router-link>
                   <p style="font-size: 1vw">
@@ -89,7 +87,7 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="2" style="border-collapse: collapse;width:450px;">
+                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0">
                   <hr
                     style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
                   />
@@ -111,159 +109,161 @@
 
 <script>
 import axios from "axios";
-import Home from "../components/layout/Home";
-import GoTop from '@inotom/vue-go-top';
-
 export default {
-  components: { Home , GoTop },
-  name: "Mydata",
-  data() {
-    return {
-      mainProps: {
-        blank: true,
-        blankColor: "#777",
-        width: 50,
-        height: 50,
-        class: "m1",
-      },
-      resturant_name: [],
-      coordinates:{lat:0,lng:0},
-      time: "",
-      category: "",
-      categ:"",
-      name: "",
-      getitem: {},
-      myvara:0.0,
-      myvarc:0.0,
-      myvard:0.0,
-      rlat:0.0,
-      rlong:0.0,
-      dis:[],
-      i:0,
-    };
-  },
-  mounted() {
-    axios
-      .get("http://www.localhost:2002/api/getcategory/"+this.categ)
-      .then((response) => {
-        console.log("", response.data.data);
-        this.resturant_name = response.data.data;
-        console.log(this.resturant_name);
-        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
-        this.dis[this.i] = this.dis[this.i]
-    }
-    console.log(this.dis);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  },
-  beforeMount() {
-    console.log("before");
-    console.log(this.resturant_name);
-  },
-  created() {
-      this.id = this.$route.params.id;
-      this.categ = this.$route.params.category
-      this.$getLocation({}).then(coordinates => {
+    name:"Find",
+    created() {
+        this.$getLocation({}).then(coordinates => {
             this.coordinates = coordinates;
             console.log(this.coordinates.lat,this.coordinates.lng);
         });
-        if (this.categ == null) {
-      console.log("get item Error");
-      window.location = "#/Home_info";
-    }
-    axios
-      .get("http://www.localhost:2002/api/getcategory/"+this.categ)
+        // this.category = $route.params.categ;
+        this.category = this.$route.params.category;
+        this.pricerate = this.$route.params.pricerate;
+        this.date = this.$route.params.day;
+        this.time = this.$route.params.time;
+        if(this.$route.params.category == ""){
+            console.log("all all all all all all all ");
+            this.category="ALL"
+            console.log(this.category);
+            this.URL="http://www.localhost:2002/api/getdata"
+        }else {
+            this.URL=("http://www.localhost:2002/api/getcategory/"+this.category);
+        }
+
+        axios
+      .get(this.URL)
       .then((response) => {
         // console.log("", response.data.data);
         this.resturant_name = response.data.data;
-        // console.log(this.resturant_name);
+        
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
            
       // console.log("Hi = "+this.i);
       this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
     }
-    console.log(this.dis);
+    
       })
       .catch((error) => {
         console.log(error);
       });
-  },
-  methods: {
-    finddistance(lat1,long1,lat2,long2) {
-      lat1 = lat1*Math.PI/180
-      lat2 = lat2*Math.PI/180
-      long1 = long1*Math.PI/180
-      long2 = long2*Math.PI/180
-      // this.myvara = Math.pow(Math.sin((lat-this.coordinates.lat)/2),2)+ Math.cos(this.coordinates.lat)*Math.cos(lat)*Math.pow(Math.sin((long-this.coordinates.lng)/2),2)
-      // this.myvarc = 2 * Math.atan2( Math.sqrt(this.myvara), Math.sqrt(1-this.myvara))
-      // this.myvard = (6373 * this.myvarc)
-      
-      
-      return parseFloat(Math.acos(Math.sin(lat1)*Math.sin(lat2)+Math.cos(lat1)*Math.cos(lat2)*Math.cos(long1 - long2)) * 6371).toFixed(1);
+    //   this.sortdistance(0,0,0,0,0)
     },
-     finddistance2(lat1,long1,lat2,long2,index){
+    beforeMount() {
+        axios
+      .get(this.URL)
+      .then((response) => {
+        // console.log(response.data.data.length);
+        // this.resturant_name = response.data.data;
+        console.log("before mount length = "+ response.data.data.le);
+        this.length = response.data.data.length;
+        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+        this.dis[this.i] = this.dis[this.i]
+    }
+    
+    // console.log(this.dis);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+    },
+    mounted() {
+        console.log("log for URL"+ this.URL);
+      console.log("Length of restname = "+parseInt(this.length) );
+      axios
+      .get(this.URL)
+      .then((response) => {
+        // console.log(response.data.data.length);
+        this.resturant_name = response.data.data;
+        console.log("before mount length = "+ response.data.data.le);
+        this.length = response.data.data.length;
+        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+        this.dis[this.i] = this.dis[this.i]
+    }
+    this.sortdistance(0,0,0,0,parseInt(this.length))
+    // console.log(this.dis);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+      
+    },
+    data() {
+        return {
+            resturant_name:{},
+            length:0,
+            category:"",
+            pricerate:"",
+            date:"",
+            time:"",
+            dis:[],
+            coordinates:{
+                lat:0,
+                lng:0
+            },
+            i:0,
+            n:0,
+            j:0,
+            min:0,
+            max:0,
+            tmp:0,
+            tmp2:0,
+            firsttmp:0,
+            URL:"http://www.localhost:2002/api/getcategory/บุฟเฟ"
+        }
+    },
+    methods: {
+        finddistance2(lat1,long1,lat2,long2,index){
        axios
       .get("https://api.longdo.com/RouteService/json/route/guide?flon="+long1+"&flat="+lat1+"&tlon="+long2+"&tlat="+lat2+"&mode=t&type=25&locale=th&key=68cd5510a9da9701e87d7ca5cbc8eaef")
       .then((response) => {
         // console.log(response.data.data[0].distance)
-        this.dis[index] = parseFloat(response.data.data[0].distance).toFixed(1)
+        this.dis[index] = response.data.data[0].distance
       })
-      
-    }
-  },
-};
+        },
+        sortdistance(i=0,j=0,min=0,tmp=0,length){
+            console.log("Sort");
+            console.log(length);
+            console.log("i = "+i);
+            console.log(this.dis);
+            for(i = 0; i<length;i++)
+            {
+                console.log("J = "+j + " ");
+                min = i;
+                for(j = i+1;j<length;j++)
+                {
+                    console.log("loop 2 J : "+j);
+                    console.log(parseFloat(this.dis[j]));
+                    console.log("IF Dis j : "+ this.dis[j]+" < dis min : "+this.dis[min]);
+                    if(this.dis[j] < this.dis[min])
+                    {
+                        console.log("true");
+                        min = j;
+                    }
+                }
+                console.log("IF dis i : "+this.dis[i]+ " > dis min :"+this.dis[min]);
+                console.log("i = "+i);
+                if(this.dis[i] > this.dis[min])
+                {
+                    console.log("Swap");
+                    console.log(this.resturant_name[i]);
+                    tmp = this.dis[i];
+                    this.tmp2 = this.resturant_name[i];
+
+                    this.dis[i] = this.dis[min];
+                    this.resturant_name[i] = this.resturant_name[min];
+                    this.dis[min] = tmp;
+                    this.resturant_name[min] = this.tmp2;
+                }
+            }
+            console.log("Sorted");
+            console.log(this.dis);
+        }
+    },
+}
 </script>
 
 <style>
-/*.font {*/
-/*  font-family: Oswald;*/
-/*}*/
-.font2 {
-  font-family: Athiti, serif;
-}
 
-.body {
-  background-color: #efede8;
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  width: 100%;
-  height: auto;
-}
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-}
-
-#myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
-}
-img {
-  width: 100%;
-  height: 170px;
-}
-image {
-  width: 100%;
-}
 </style>
