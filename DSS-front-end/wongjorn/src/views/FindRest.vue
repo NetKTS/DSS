@@ -124,13 +124,17 @@ export default {
         if(this.$route.params.pricerate == ""){
             this.pricerate=0;
         }
-        if(this.$route.params.category == ""){
+        
+        if(this.$route.params.category == ""&&this.$route.params.pricerate == ""){
             console.log("all all all all all all all ");
             this.category="ALL"
             console.log(this.category);
             this.URL="http://www.localhost:2002/api/getdata"
-        }else {
+        }
+        else if(this.$route.params.category != ""&&this.$route.params.pricerate != ""){
             this.URL=("http://www.localhost:2002/api/findshort/"+this.category+"/"+this.pricerate);
+        }else if(this.$route.params.category == ""&& this.$route.params.pricerate !=""){
+            this.URL=("http://www.localhost:2002/api/findrate/"+this.pricerate);
         }
 
         axios
