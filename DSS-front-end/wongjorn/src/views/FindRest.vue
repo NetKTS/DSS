@@ -72,7 +72,7 @@
                 <td
                   style="padding-left: 50px;padding-top: 0px;width: 100%;height: auto"
                 >
-                  <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates,category:categ,id:id}}">
+                  <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates,category: category,pricerate:pricerate,day:date,time:time}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
                     <font>ระยะทาง {{ (dis[index]/1000) }} กิโลเมตร</font>
                     <!-- <br><font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
@@ -121,13 +121,16 @@ export default {
         this.pricerate = this.$route.params.pricerate;
         this.date = this.$route.params.day;
         this.time = this.$route.params.time;
+        if(this.$route.params.pricerate == ""){
+            this.pricerate=0;
+        }
         if(this.$route.params.category == ""){
             console.log("all all all all all all all ");
             this.category="ALL"
             console.log(this.category);
             this.URL="http://www.localhost:2002/api/getdata"
         }else {
-            this.URL=("http://www.localhost:2002/api/getcategory/"+this.category);
+            this.URL=("http://www.localhost:2002/api/findshort/"+this.category+"/"+this.pricerate);
         }
 
         axios
@@ -195,7 +198,7 @@ export default {
             resturant_name:{},
             length:0,
             category:"",
-            pricerate:"",
+            pricerate:0,
             date:"",
             time:"",
             dis:[],

@@ -120,3 +120,13 @@ exports.category = (req, res) => {
 
 
   };
+exports.findshort = (req,res) => {
+    const category  = req.params.category;
+    const pricerate = req.params.pricerate
+    Namelist.find({ 'category':{'$regex' : category ,'$options':'i'},'pricerate':{'$regex' : pricerate ,'$options':'i'}}).exec((error, data) => {
+      if (error) return res.status(400).json({ error });
+      if (data) {
+        return res.status(200).json({ data });
+      }
+    });
+}

@@ -149,7 +149,16 @@
     <br />
     <div>
       <center>
-        <router-link :to="{name:'Category', params: {category: category,id:id}}">
+        <router-link v-if="date== null" :to="{name:'Category', params: {category: category,id:id}}">
+          <button
+            class="btn btn-secondary font"
+            style="width:100px"
+            type="clear"
+          >
+            Back
+          </button>
+        </router-link>
+        <router-link v-if="date!= null" :to="{name:'FindRest', params: {category: category,pricerate:pricerate,day:date,time:time}}">
           <button
             class="btn btn-secondary font"
             style="width:100px"
@@ -184,6 +193,9 @@ export default {
       getitem: {},
       mylocation: { lng: 0, lat: 0 },
       category:"",
+      pricerate:"",
+      date:"",
+      time:"",
     };
   },
   created() {
@@ -192,6 +204,9 @@ export default {
     this.getitem = this.$route.params.payload;
     this.id = this.$route.params.id;
     this.category = this.$route.params.category;
+    this.pricerate = this.$route.params.pricerate;
+    this.date = this.$route.params.day;
+    this.time = this.$route.params.time;
     console.log(this.id);
     if (this.getitem == null) {
       console.log("get item Error");
