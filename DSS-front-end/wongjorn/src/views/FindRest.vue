@@ -88,7 +88,7 @@
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
                 
-              <tr v-if="dis[index]>0&& index < K">
+              <tr v-if="dis[index]>0&& index < K&& isclose[index]!=true">
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
                     src="../assets/cok3.jpg"
@@ -117,10 +117,11 @@
                       </div>
                     </font>
                   </p>
+                  
                 </td>
               </tr>
               <tr>
-                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0&& index < K">
+                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0&& index < K&& isclose[index]!=true">
                   <hr
                     style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
                   />
@@ -155,6 +156,7 @@ export default {
         this.pricerate = this.$route.params.pricerate;
         this.date = this.$route.params.day;
         this.time = this.$route.params.time;
+        this.date = new Date().getDay();
         if(this.$route.params.pricerate == ""){
             this.pricerate=0;
         }
@@ -167,8 +169,10 @@ export default {
         }
         else if(this.$route.params.category != ""&&this.$route.params.pricerate == 0){
             this.URL=("http://www.localhost:2002/api/findshort/"+this.category+"/0");
-        }else if(this.$route.params.category == ""&& this.$route.params.pricerate !=""){
+        }else if(this.$route.params.category == ""&& this.$route.params.pricerate !=0){
             this.URL=("http://www.localhost:2002/api/findrate/"+this.pricerate);
+        }else if(this.$route.params.category != ""&& this.$route.params.pricerate!=0){
+         this.URL=("http://www.localhost:2002/api/findshort/"+this.category+"/"+this.pricerate);
         }
     console.log("URL URL URL URL "+this.URL);
         axios
@@ -209,6 +213,21 @@ export default {
       
     },
     mounted() {
+      if(this.date == 0){
+        this.today = "sunday";
+      }else if(this.date == 1){
+        this.today = "monday";
+      }else if(this.date == 2){
+        this.today = "tuesday";
+      }else if(this.date == 3){
+        this.today = "wednesday";
+      }else if(this.date == 4){
+        this.today = "thursday";
+      }else if(this.date == 5){
+        this.today = "friday";
+      }else if(this.date == 6){
+        this.today = "saturday";
+      }
         console.log("log for URL"+ this.URL);
       console.log("Length of restname = "+parseInt(this.length) );
       axios
@@ -220,7 +239,30 @@ export default {
         this.length = response.data.data.length;
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
         this.dis[this.i] = this.dis[this.i]
+        if(this.today=="monday"&&this.resturant_name[this.i].date[0].monday=="ปิด"){
+          this.isclose[this.i] = true
+        }
+        else if(this.today=="tuesday"&&this.resturant_name[this.i].date[0].tuesday=="ปิด"){
+          this.isclose[this.i] = true
+        }
+        else if(this.today=="wednesday"&&this.resturant_name[this.i].date[0].wednesday=="ปิด"){
+          this.isclose[this.i] = true
+        }
+        else if(this.today=="thursday"&&this.resturant_name[this.i].date[0].thursday=="ปิด"){
+          this.isclose[this.i] = true
+        }
+        else if(this.today=="friday"&&this.resturant_name[this.i].date[0].friday=="ปิด"){
+          this.isclose[this.i] = true
+        }
+        else if(this.today=="saturday"&&this.resturant_name[this.i].date[0].saturday=="ปิด"){
+          this.isclose[this.i] = true
+        }
+        else if(this.today=="sunday"&&this.resturant_name[this.i].date[0].sunday=="ปิด"){
+          this.isclose[this.i] = true
+        }
     }
+    console.log("thisdayarray");
+    console.log(this.thisdayarray);
     this.sortdistance(0,0,0,0,parseInt(this.length))
     // console.log(this.dis);
       })
@@ -237,8 +279,8 @@ export default {
             length:0,
             category:"",
             pricerate:0,
-            date:"",
-            time:"",
+            date: new Date().getDay(),
+            time: new Date().getHours(),
             dis:[],
             coordinates:{
                 lat:0,
@@ -253,7 +295,13 @@ export default {
             tmp2:0,
             firsttmp:0,
             URL:"http://www.localhost:2002/api/getcategory/",
-            loading:true
+            loading:true,
+            today:"",
+            day:{},
+            thisdayarray:[{
+              today:[]
+            }],
+            isclose:[]
         }
     },
     methods: {
