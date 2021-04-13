@@ -175,7 +175,6 @@
 
 <script>
 // import Mydata from "./MyData";
-
 export default {
   name: "Details",
   props: {},

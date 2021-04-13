@@ -1,6 +1,5 @@
 <template>
   <div class="bgcolor body">
-      
     <!--    pic cover   -->
     <center>
       <div style="padding-top: 30px">
@@ -222,6 +221,22 @@ export default {
       console.log("get item Error");
       window.location = "#/Home_info";
     }
+    axios
+      .get("http://www.localhost:2002/api/getcategory/"+this.categ)
+      .then((response) => {
+        // console.log("", response.data.data);
+        this.resturant_name = response.data.data;
+        // console.log(this.resturant_name);
+        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+           
+      // console.log("Hi = "+this.i);
+      this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+    }
+    console.log(this.dis);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   methods: {
     finddistance(lat1,long1,lat2,long2) {

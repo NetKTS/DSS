@@ -22,10 +22,10 @@
             <td ><font v-for="cat in item.category" :key="cat"> {{cat}} <br></font></td>
             <td>{{ item.pricerate }}</td>
             <td> <font v-for="(ser, in2) in item.service" :key="in2"> {{ item.service[in2] }} <br> </font> </td>
-            
-            <td> Monday : {{item.date[0].monday}} <br> Tuesday : {{item.date[0].tuesday}} <br> Wednesday : {{ item.date[0].wednesday }}
+            <td> {{ item.date[0]}} </td>
+            <!-- <td> Monday : {{item.date[0].monday}} <br> Tuesday : {{item.date[0].tuesday}} <br> Wednesday : {{ item.date[0].wednesday }}
             <br> Thursday : {{ item.date[0].thursday }} <br> Friday : {{item.date[0].friday}} <br> Saturday : {{ item.date[0].saturday}}
-            <br> Sunday : {{ item.date[0].sunday }} </td>
+            <br> Sunday : {{ item.date[0].sunday }} </td> -->
             <td>{{ item.location }}</td>
             <!-- <td>{{ item.map }}</td> -->
             <td><router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates}}"><button>Edit</button></router-link> </td>
@@ -65,7 +65,7 @@ export default {
         
         // console.log("",response.data.data);
         this.resturant_name = response.data.data
-        // console.log(this.resturant_name);
+        console.log(this.resturant_name[1].date[0].monday);
       })
       .catch((error) => {
         console.log(error);
