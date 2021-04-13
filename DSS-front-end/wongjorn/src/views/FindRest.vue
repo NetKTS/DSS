@@ -12,7 +12,7 @@
             </td>
             <td style="border-collapse: collapse;width:200px;position:center;">
               <center>
-                <router-link to="/login">
+                <router-link to="/Home_info">
                   <img
                     src="../assets/wongjornlogo2.png"
                     style="width:60%;height:60%"
@@ -47,14 +47,49 @@
       </tr>
     </table>
     <Home class="container" />
-    
+    <div v-if="loading ==true ">
+        <center>
+        <div class="font2" style="font-size: 3vw;color:black ;">
+          Loading . . .
+        </div>
+       <br>
+        <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
+        </center>
+      </div>
     <table class="container">
         
+        <div v-if="resturant_name.length === 0">
+        <center>
+        <div class="font2" style="font-size: 3vw;color:black ;">
+          ไม่พบร้านอาหารที่คุณต้องการ
+        </div>
+       <br>
+        <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
+        </center>
+      </div>
+      <div v-if="resturant_name[0].name == '' ">
+        <center>
+        <div class="font2" style="font-size: 3vw;color:black ;">
+          Loading . . .
+        </div>
+       <br>
+        <hr
+                style="border-radius: 5px;height:3px;border-width:0;color:black;background-color:black;width:auto"
+              />
+        </center>
+      </div>
       <tr v-for="(item, index) in resturant_name" :key="index">
         <!-- <font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
         <!-- <font v-for="cat in item.category" :key="cat"> -->
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
+                <tr v-if="resturant_name.length<1">
+                    <td> Loading . . .</td>
+                </tr>
               <tr v-if="dis[index]>0&& index < K">
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
@@ -109,6 +144,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
     name:"Find",
     created() {
@@ -218,7 +254,8 @@ export default {
             tmp:0,
             tmp2:0,
             firsttmp:0,
-            URL:"http://www.localhost:2002/api/getcategory/บุฟเฟ"
+            URL:"http://www.localhost:2002/api/getcategory/บุฟเฟ",
+            loading:true
         }
     },
     methods: {
@@ -266,6 +303,7 @@ export default {
                 }
             }
             console.log("Sorted");
+            this.loading = false;
             console.log(this.dis);
         }
     },

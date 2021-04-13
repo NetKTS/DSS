@@ -11,7 +11,7 @@
             </td>
             <td style="border-collapse: collapse;width:200px;position:center;">
               <center>
-                <router-link to="/login">
+                <router-link to="/Home_info">
                   <img
                     src="../assets/wongjornlogo2.png"
                     style="width:60%;height:60%"
@@ -351,7 +351,7 @@
                     id="radioprice1"
                     name="pricerate"
                     required
-                    value="0 - 100 บาท"
+                    value="1-1"
                     v-model.number="applicant.pricerate"
                   />
                   <label class="custom-control-label" for="radioprice1">
@@ -391,22 +391,7 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
-                <div class="custom-control custom-radio">
-                  <input
-                    type="radio"
-                    class="custom-control-input"
-                    id="radioprice4"
-                    name="pricerate"
-                    required
-                    value="500 บาทขึ้นไป"
-                    v-model.number="applicant.pricerate"
-                  />
-                  <label class="custom-control-label" for="radioprice4">
-                    500 บาทขึ้นไป</label
-                  >
-                </div>
-              </td>
+              
             </tr>
           </div>
         </table>
@@ -461,7 +446,7 @@ export default {
     submit() {
 
       // window.location = "#/FindRest";
-      alert(JSON.stringify(this.applicant));
+      // alert(JSON.stringify(this.applicant));
 
     },
     clear() {

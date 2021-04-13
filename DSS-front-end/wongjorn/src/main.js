@@ -7,7 +7,11 @@ import router from './router'
 import store from './store'
 import LongdoMap from 'longdo-map-vue'
 import Vuegeolocation from 'vue-browser-geolocation'
+import Dialog from 'vue-dialog-loading'
 
+Vue.use(Dialog, {
+ dialogBtnColor: '#0f0'
+})
 Vue.config.productionTip = false
 
 Vue.use(LongdoMap, {

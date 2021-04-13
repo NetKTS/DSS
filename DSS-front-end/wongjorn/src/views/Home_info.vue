@@ -13,7 +13,7 @@
             </td>
             <td style="border-collapse: collapse;width:200px;position:center;">
               <center>
-                <router-link to="/login">
+                <router-link to="/Home_info">
                   <img
                     src="../assets/wongjornlogo2.png"
                     style="width:60%;height:60%"
