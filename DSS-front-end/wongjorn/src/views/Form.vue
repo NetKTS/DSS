@@ -178,7 +178,7 @@
                     id="radio7"
                     name="radio-stacked"
                     required
-                    value="ของหวาน"
+                    value="คาเฟ่ต์"
                     v-model.number="applicant.category"
                   />
                   <label class="custom-control-label" for="radio7">

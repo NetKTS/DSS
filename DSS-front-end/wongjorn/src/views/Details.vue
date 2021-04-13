@@ -12,7 +12,20 @@
       >
         <table>
           <tr>
+            
             <td style="width:250px;" class="center">
+              <div>
+                <h3 style="color:black;" class="font">
+          Today :
+          <font v-if="new Date().getDay() == 0">Sunday</font>
+          <font v-if="new Date().getDay() == 1">Monday</font>
+          <font v-if="new Date().getDay() == 2">Tuesday</font>
+          <font v-if="new Date().getDay() == 3">Wednesday</font>
+          <font v-if="new Date().getDay() == 4">Thursday</font>
+          <font v-if="new Date().getDay() == 5">Friday</font>
+          <font v-if="new Date().getDay() == 6">Saturday</font>
+        </h3>
+              </div>
               <img
                 :src="getitem.img"
                 style="border-radius: 15px 15px 15px 15px;border:1px solid black"
@@ -54,7 +67,7 @@
                 <table>
                   <tr>
                     <td style="width:150px">
-                      Monday :
+                     <font color="red" v-if="new Date().getDay() == 1">→</font> Monday :
                     </td>
                     <td>
                       {{ getitem.date[0].monday }}
@@ -62,7 +75,7 @@
                   </tr>
                   <tr>
                     <td>
-                      Tuesday :
+                     <font color="red" v-if="new Date().getDay() == 2">→</font> Tuesday :
                     </td>
                     <td>
                       {{ getitem.date[0].tuesday }}
@@ -70,7 +83,7 @@
                   </tr>
                   <tr>
                     <td>
-                      Wednesday :
+                     <font color="red" v-if="new Date().getDay() == 3">→</font> Wednesday :
                     </td>
                     <td>
                       {{ getitem.date[0].wednesday }}
@@ -78,7 +91,7 @@
                   </tr>
                   <tr>
                     <td>
-                      Thursday :
+                     <font color="red" v-if="new Date().getDay() == 4">→</font> Thursday :
                     </td>
                     <td>
                       {{ getitem.date[0].thursday }}
@@ -86,7 +99,7 @@
                   </tr>
                   <tr>
                     <td>
-                      Friday :
+                     <font color="red" v-if="new Date().getDay() == 5">→</font> Friday :
                     </td>
                     <td>
                       {{ getitem.date[0].friday }}
@@ -94,7 +107,7 @@
                   </tr>
                   <tr>
                     <td>
-                      Saturday :
+                     <font color="red" v-if="new Date().getDay() == 6">→</font> Saturday :
                     </td>
                     <td>
                       {{ getitem.date[0].saturday }}
@@ -102,7 +115,7 @@
                   </tr>
                   <tr>
                     <td>
-                      Sunday :
+                     <font color="red" v-if="new Date().getDay() == 0">→</font> Sunday :
                     </td>
                     <td>
                       {{ getitem.date[0].sunday }}
@@ -194,8 +207,8 @@ export default {
       mylocation: { lng: 0, lat: 0 },
       category:"",
       pricerate:"",
-      date:"",
-      time:"",
+      date: new Date().getDay(),
+      time: new Date().getHours(),
     };
   },
   created() {

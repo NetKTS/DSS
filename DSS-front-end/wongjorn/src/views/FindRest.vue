@@ -47,7 +47,7 @@
       </tr>
     </table>
     <Home class="container" />
-    <div v-if="loading ==true && true == false">
+    <div v-if="loading ==true">
         <center>
         <div class="font2" style="font-size: 3vw;color:black ;">
           Loading . . .
@@ -165,12 +165,12 @@ export default {
             console.log(this.category);
             this.URL="http://www.localhost:2002/api/getdata"
         }
-        else if(this.$route.params.category != ""&&this.$route.params.pricerate != ""){
-            this.URL=("http://www.localhost:2002/api/findshort/"+this.category+"/"+this.pricerate);
+        else if(this.$route.params.category != ""&&this.$route.params.pricerate == 0){
+            this.URL=("http://www.localhost:2002/api/findshort/"+this.category+"/0");
         }else if(this.$route.params.category == ""&& this.$route.params.pricerate !=""){
             this.URL=("http://www.localhost:2002/api/findrate/"+this.pricerate);
         }
-
+    console.log("URL URL URL URL "+this.URL);
         axios
       .get(this.URL)
       .then((response) => {
@@ -252,7 +252,7 @@ export default {
             tmp:0,
             tmp2:0,
             firsttmp:0,
-            URL:"http://www.localhost:2002/api/getcategory/บุฟเฟ",
+            URL:"http://www.localhost:2002/api/getcategory/",
             loading:true
         }
     },
