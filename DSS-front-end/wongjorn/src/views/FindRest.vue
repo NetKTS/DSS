@@ -55,7 +55,7 @@
         <!-- <font v-for="cat in item.category" :key="cat"> -->
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
-              <tr v-if="dis[index]>0">
+              <tr v-if="dis[index]>0&& index < K">
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
                     src="../assets/cok3.jpg"
@@ -87,7 +87,7 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0">
+                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0&& index < K">
                   <hr
                     style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
                   />
@@ -191,6 +191,7 @@ export default {
     },
     data() {
         return {
+            K:30,
             resturant_name:{},
             length:0,
             category:"",
