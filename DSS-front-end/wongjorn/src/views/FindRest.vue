@@ -88,7 +88,7 @@
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
                 
-              <tr v-if="dis[index]>0&& index < K&& isclose[index]!=true">
+              <tr v-if="dis[index]>0&& index <= K&& isclose[index]!=true">
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
                     src="../assets/cok3.jpg"
@@ -121,22 +121,32 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0&& index < K&& isclose[index]!=true">
+                <td colspan="2" style="border-collapse: collapse;width:450px;" v-if="dis[index]>0&& index <= K&& isclose[index]!=true">
                   <hr
                     style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
                   />
                 </td>
+              
+                
+
               </tr>
-            </table>
+            </table><center>
+              <div v-if="index==K">
+                  
+      <router-link to="/Home_info">
+            <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button>
+          </router-link>
+    
+                </div></center>
           <!-- </div> -->
         <!-- </font> -->
       </tr>
     </table>
-    <center>
+    <!-- <center>
       <router-link to="/Home_info">
             <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button>
           </router-link>
-    </center>
+    </center> -->
     <br />
   </div>
 </template>
@@ -238,7 +248,11 @@ export default {
         console.log("before mount length = "+ response.data.data.le);
         this.length = response.data.data.length;
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+        
         this.dis[this.i] = this.dis[this.i]
+        if(this.dis[this.i]<=1) {
+          this.resturant_name[this.i] = null;
+        }
         if(this.today=="monday"&&this.resturant_name[this.i].date[0].monday=="ปิด"){
           this.isclose[this.i] = true
         }
@@ -274,7 +288,7 @@ export default {
     },
     data() {
         return {
-            K:30,
+            K:10,
             resturant_name:{},
             length:0,
             category:"",
