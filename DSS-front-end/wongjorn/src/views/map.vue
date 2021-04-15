@@ -1,7 +1,7 @@
 <template >
 <div>
-    <div class="container" id="map"> <h1> ชื่อร้าน : {{ getitem.name }} </h1></div>
-     <longdo-map @load="event" :zoom="10" :lastView="false" >         
+    <div class="container" id="map"> <h1 class="font2"> ชื่อร้าน : {{ getitem.name }} </h1></div>
+     <longdo-map @load="event" :zoom="10" :lastView="false" style="border:1px solid black">         
         <longdo-map-marker             
             v-for="(item, i) in markers"             
             :key="i"             
@@ -92,6 +92,9 @@ export default {
 body{
     height: 100%;
     margin: 0px;
+}
+.font2 {
+  font-family: Athiti, serif;
 }
 
 </style>

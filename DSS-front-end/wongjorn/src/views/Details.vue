@@ -180,7 +180,7 @@
             Back
           </button>
         </router-link>
-        <router-link to="/Home_info">
+        <!-- <router-link to="/Home_info">
           <button
             class="btn btn-primary pad font"
             style="width:100px"
@@ -188,7 +188,7 @@
           >
             Main
           </button>
-        </router-link>
+        </router-link> -->
       </center>
     </div>
     <br />

@@ -31,14 +31,14 @@
     </center>
     <go-top style="background-color: black"></go-top>
     <table class="table-responsive-md font2">
-      <tr>
+      <!-- <tr>
         <td>
-          <router-link to="/Home_info">
+          <router-link to="/Home_info"> -->
             <!-- <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button> -->
-            <img src="https://pics.freeicons.io/uploads/icons/png/9541818211553167201-512.png" style="width:20%;height:100px">
+            <!-- <img src="https://pics.freeicons.io/uploads/icons/png/9541818211553167201-512.png" style="width:20%;height:100px">
           </router-link>
         </td>
-      </tr>
+      </tr> -->
       
       <tr>
         <td colspan="2" style="border-collapse: collapse;width:450px;">

@@ -117,7 +117,8 @@
               </div>
 
 
-              
+
+
 <!--              slide 2 -->
               <div class="carousel-item">
                 <div class="row">
@@ -150,6 +151,8 @@
                   </div>
                 </div>
               </div>
+
+
 <!--              slide 3 -->
               <div class="carousel-item">
                 <div class="row">
