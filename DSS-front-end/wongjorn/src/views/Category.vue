@@ -161,9 +161,10 @@ export default {
         console.log("", response.data.data);
         this.resturant_name = response.data.data;
         console.log(this.resturant_name);
+        this.loading = false;
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
         this.dis[this.i] = this.dis[this.i]
-        this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+        // this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
     }
     console.log(this.dis);
       })
@@ -182,7 +183,7 @@ export default {
         console.log(this.resturant_name);
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
         this.dis[this.i] = this.dis[this.i]
-        this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+        // this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
     }
     console.log(this.dis);
       })
@@ -207,11 +208,10 @@ export default {
         // console.log("", response.data.data);
         this.resturant_name = response.data.data;
         // console.log(this.resturant_name);
-        for(this.i = 0; this.i <this.resturant_name.length;this.i++){
-           
-      // console.log("Hi = "+this.i);
-      this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
-    }
+    //     for(this.i = 0; this.i <this.resturant_name.length;this.i++){
+      
+    //   this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
+    // }
     console.log(this.dis);
       })
       .catch((error) => {
