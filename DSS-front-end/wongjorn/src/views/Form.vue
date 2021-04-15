@@ -450,7 +450,8 @@ export default {
 
     },
     clear() {
-      this.applicant = {};
+      this.applicant.category = "";
+      this.applicant.pricerate = "";
     },
   },
 };

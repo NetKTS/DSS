@@ -68,7 +68,7 @@
         <!-- <font v-for="cat in item.category" :key="cat"> -->
           <!-- <div v-if="cat.includes(cate)"> -->
             <table class="table-responsive-md font2">
-              <tr v-if="dis[index]>0">
+              <tr>
                 <td class="w-25" style="padding-top: 0px">
                   <!-- <img
                     src="../assets/cok3.jpg"
@@ -87,7 +87,7 @@
                 >
                   <router-link :to="{name:'Details', params: {payload: item,mylocation:coordinates,category:categ,id:id}}">
                     <font style="font-size: 2vw;color:black ;">{{ item.name }} </font><br>
-                    <font>ระยะทาง {{  dis[index]/1000 }} กิโลเมตร</font>
+                    <!-- <font>ระยะทาง {{  dis[index]/1000 }} กิโลเมตร</font> -->
                     <!-- <br><font> Distance : {{ finddistance2(coordinates.lat ,coordinates.lng,item.map[0].lat,item.map[0].long,index) }}</font> -->
                   </router-link>
                   <p style="font-size: 1vw">
@@ -99,7 +99,7 @@
                   </p>
                 </td>
               </tr>
-              <tr v-if="dis[index]>0">
+              <tr>
                 <td colspan="2" style="border-collapse: collapse;width:450px;">
                   <hr
                     style="border-radius: 5px;height:2px;border-width:0;color:black;background-color:black;width:auto"
@@ -163,6 +163,7 @@ export default {
         console.log(this.resturant_name);
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
         this.dis[this.i] = this.dis[this.i]
+        this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
     }
     console.log(this.dis);
       })
@@ -181,6 +182,7 @@ export default {
         console.log(this.resturant_name);
         for(this.i = 0; this.i <this.resturant_name.length;this.i++){
         this.dis[this.i] = this.dis[this.i]
+        this.finddistance2(this.coordinates.lat,this.coordinates.lng,this.resturant_name[this.i].map[0].lat,this.resturant_name[this.i].map[0].long,this.i)
     }
     console.log(this.dis);
       })

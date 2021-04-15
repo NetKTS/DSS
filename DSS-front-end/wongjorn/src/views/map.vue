@@ -1,5 +1,15 @@
 <template >
 <div>
+    <router-link to="/Home_info">
+          <button
+            class="btn btn-secondary font"
+            style="width:100px"
+            type="clear"
+          >
+            Back
+          </button>
+        </router-link>
+        <br><br>
     <div class="container" id="map"> <h1 class="font2"> ชื่อร้าน : {{ getitem.name }} </h1></div>
      <longdo-map @load="event" :zoom="10" :lastView="false" style="border:1px solid black">         
         <longdo-map-marker             
