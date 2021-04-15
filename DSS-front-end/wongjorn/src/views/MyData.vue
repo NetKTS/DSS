@@ -72,7 +72,7 @@ export default {
       });
       //console.log(this.resturant_name)
     axios
-      .get("https://mmmap15.longdo.com/mmroute/json/route/matrix?flon[0]=100.534&flat[0]=13.745&tlon[0]=100.601&tlat[0]=13.919&key=68cd5510a9da9701e87d7ca5cbc8eaef")
+      .get("https://mmmap15.longdo.com/mmroute/json/route/matrix?flon[0]=100.534&flat[0]=13.745&tlon[0]=100.601&tlat[0]=13.919&key=8a5564754580b3cda676ad2ebf437179")
       .then((response) => {
         console.log(response.data.data)
         this.distance = response.data.data

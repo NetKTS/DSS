@@ -27,7 +27,7 @@
 
 <script>
 import { LongdoMap, LongdoMapMarker } from 'longdo-map-vue'
-LongdoMap.init ({ apiKey: '68cd5510a9da9701e87d7ca5cbc8eaef',placeholder: document.getElementById('map') })
+LongdoMap.init ({ apiKey: '8a5564754580b3cda676ad2ebf437179',placeholder: document.getElementById('map') })
 
 // LongdoMap.location({lon:101.65041625499725,lat:14.0298896425883 }, true)
 export default {

@@ -121,9 +121,9 @@
               </router-link>
               <p style="font-size: 1vw">
                 <font v-for="cat2 in item.category" :key="cat2">
-                  <div v-if="cat2 != null">
+                  <!-- <div v-if="cat2 != null"> -->
                     <td>{{ cat2 }}</td>
-                  </div>
+                  <!-- </div> -->
                 </font>
               </p>
             </td>
@@ -395,7 +395,7 @@ export default {
             long2 +
             "&tlat=" +
             lat2 +
-            "&mode=t&type=25&locale=th&key=68cd5510a9da9701e87d7ca5cbc8eaef"
+            "&mode=t&type=25&locale=th&key=8a5564754580b3cda676ad2ebf437179"
         )
         .then((response) => {
           // console.log(response.data.data[0].distance)
