@@ -39,8 +39,6 @@ const Namelist = [
    
 ]
 
-
-
 //environtment variable or you can say constants
 env.config();
 

@@ -2,15 +2,21 @@
   <div class="body">
     <br />
     <center>
-      <label class="left font2" style="font-size:48px;font-weight:bold;">{{
+      <table class="table-responsive-md">
+      <label class="font2" style="font-size:48px;font-weight:bold;">{{
         getitem.name
       }}</label
-      ><br />
+      >
+      </table>
+      <br />
+      <table class="table-responsive-md">
+
+      
       <div
         class="card-header"
-        style="border-radius:10px;border:1px solid black;width:800px;margin-left:5px"
+        style="border-radius:10px;border:1px solid black;width:auto;margin-left:5px"
       >
-        <table>
+        <table class="table-responsive-md">
           <tr>
             
             <td style="width:250px;" class="center">
@@ -66,7 +72,7 @@
               <label class="left font2" style="font-size:20px;margin-left:30px">
                 <table>
                   <tr>
-                    <td style="width:150px">
+                    <td style="width:120px">
                      <font color="red" v-if="new Date().getDay() == 1">→</font> Monday :
                     </td>
                     <td>
@@ -158,6 +164,7 @@
           </tr>
         </table>
       </div>
+      </table>
     </center>
     <br />
     <div>

@@ -3,7 +3,7 @@
     <!--    pic cover   -->
     <center>
       <div style="padding-top: 30px">
-        <table>
+        <table class="table-responsive-md">
           <tr>
             <td style="border-collapse: collapse;width:450px;">
               <hr
@@ -55,7 +55,7 @@
         />
       </center>
     </div>
-    <table class="container">
+    <table class="container table-responsive-md font2">
       <div v-if="resturant_name.length === 0">
         <center>
           <div class="font2" style="font-size: 3vw;color:black ;">
@@ -94,7 +94,7 @@
                 :src="item.img"
                 class="rounded-circle img-fluid"
                 alt=""
-                style="width: 100%;height: 200px"
+                style="width: auto;height: auto"
               />
             </td>
             <td

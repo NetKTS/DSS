@@ -2,7 +2,7 @@
   <div class="body" style="padding-top: 30px">
     <form action="" style="font-size:20px">
       <center>
-        <table>
+        <table class="table-responsive-md">
           <tr>
             <td style="border-collapse: collapse;width:450px;">
               <hr
@@ -28,9 +28,8 @@
         </table>
       </center>
       <br>
-
-      <center>
-        <h2 class="font2" style="font-weight:bold;">
+      <center >
+        <h2 class="font2 table-responsive-md" style="font-weight:bold;">
           ค้นหาร้านอาหารที่ใกล้ที่สุด
         </h2>
       </center>
@@ -38,6 +37,7 @@
     <hr
         style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:auto"
       />
+     <table class="table-responsive-md">
       <div
         class="card-header"
         style="border-radius:10px;border:1px solid black;width:225px;"
@@ -53,9 +53,9 @@
           <font v-if="new Date().getDay() == 6">Saturday</font>
         </h3>
       </div>
-
+  </table>
       <br />
-
+      <table class="table-responsive-md">
       <div
         class="card-header"
         style="border-radius:10px;border:1px solid black;width:auto;"
@@ -70,7 +70,7 @@
         <table>
           <div class="form-check font2">
             <tr>
-              <td style="border-collapse: collapse;width:275px;">
+              <td style="border-collapse: collapse;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -86,7 +86,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -102,7 +104,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -118,7 +122,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -136,9 +142,8 @@
               </td>
             </tr>
 
-            <br />
             <tr>
-              <td style="border-collapse: collapse;width:275px;">
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -154,7 +159,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -170,7 +177,10 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -186,7 +196,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -204,9 +216,8 @@
               </td>
             </tr>
 
-            <br />
             <tr>
-              <td style="border-collapse: collapse;width:275px;">
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -222,7 +233,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -238,7 +251,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -254,7 +269,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -271,10 +288,8 @@
                 </div>
               </td>
             </tr>
-
-            <br />
             <tr>
-              <td style="border-collapse: collapse;width:275px;">
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -290,7 +305,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -306,7 +323,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -322,14 +341,15 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;"></td>
+              <td style="border-collapse: collapse; ;"></td>
             </tr>
           </div>
         </table>
       </div>
-
+      </table>
       <br />
 
+      <table class="table-responsive-md">
       <div
         class="card-header"
         style="border-radius:10px;border:1px solid black;width:auto"
@@ -340,10 +360,10 @@
         <hr
           style="border-radius: 5px;height:1px;border-width:0;color:black;background-color:black;width:auto"
         />
-        <table>
+        <table  class="table-responsive-md">
           <div class="form-check font2">
             <tr>
-              <td style="border-collapse: collapse;width:275px;">
+              <td style="border-collapse: collapse;width:auto;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -359,7 +379,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -375,7 +397,9 @@
                   >
                 </div>
               </td>
-              <td style="border-collapse: collapse;width:275px;">
+              </tr>
+              <tr>
+              <td style="border-collapse: collapse; ;">
                 <div class="custom-control custom-radio">
                   <input
                     type="radio"
@@ -396,6 +420,7 @@
           </div>
         </table>
       </div>
+      </table>
       <br />
       <div>
         <center>

@@ -3,13 +3,12 @@
     <center>
       <router-link to="/Home_info">
       <a>
-        <img
+        <img class="table-responsive-md"
           style="width:40%;height:40%;margin-top:12%;opacity:1;"
           id="img1"
           src="../assets/wongjornlogo2.png"
         />
       </a>
-      
       </router-link>
     </center>
     <h1>{{test2}}</h1>

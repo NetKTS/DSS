@@ -3,7 +3,7 @@
     <!--    pic cover   -->
     <center>
     <div style="padding-top: 30px">
-    <table>
+    <table class="table-responsive-md">
           <tr>
             <td style="border-collapse: collapse;width:450px;">
               <hr
@@ -32,6 +32,20 @@
     <go-top style="background-color: black"></go-top>
     <table class="table-responsive-md font2">
       <!-- <tr>
+          <td class="w-25" style="padding-top: 40px">
+
+              <img src="../assets/cok3.jpg" class="rounded-circle img-fluid" alt="">
+
+          </td>
+          <td style="padding-left: 50px;padding-top: 50px;width: 100%;height: auto">
+            <h1 style="font-size: 3vw">ร้านหมู</h1>
+            <p style="font-size: 2vw">ส้มตำ</p>
+          </td>
+          
+
+
+      </tr> -->
+      <!-- <tr>
         <td>
           <router-link to="/Home_info"> -->
             <!-- <b-button variant="warning" class="font2 btn-md">ย้อนกลับ</b-button> -->
@@ -46,7 +60,7 @@
         </td>
       </tr>
     </table>  
-    <table class="container">
+    <table class="container table-responsive-md font2">
       <div v-if="resturant_name.length===0"></div>
       <div v-if="loading ==true&&resturant_name.length === 0">
         <center>
@@ -61,7 +75,7 @@
       </div>
       
       <div v-else>
-        <table class="container">
+        <table class="container table-responsive-md font2">
       <tr v-for="(item, index) in resturant_name" :key="index">
             <table class="table-responsive-md font2">
               <tr>
@@ -76,7 +90,7 @@
                     :src="item.img"
                     class="rounded-circle img-fluid"
                     alt=""
-                    style="width: 100%;height: 200px"
+                    style="width: auto;height: auto"
                   />
                 </td>
                 <td
